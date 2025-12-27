@@ -234,10 +234,10 @@ export default function DesignStudioPage() {
           <h2 className="font-serif text-3xl mb-8 text-center">Design Inspiration</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80',
-              'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80',
-              'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80',
-              'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&q=80',
+              'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400&q=80',
+              'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=400&q=80',
+              'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=400&q=80',
+              'https://images.pexels.com/photos/259580/pexels-photo-259580.jpeg?auto=compress&cs=tinysrgb&w=400&q=80',
             ].map((img, index) => (
               <div key={index} className="aspect-square overflow-hidden rounded-lg">
                 <img
