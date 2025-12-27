@@ -52,7 +52,7 @@ export default function ProductsWindowsPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80"
+          src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
           alt="Premium uPVC Windows"
           className="w-full h-full object-cover"
         />

@@ -52,7 +52,7 @@ export default function ProductsDoorsPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=80"
+          src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
           alt="Premium uPVC Doors"
           className="w-full h-full object-cover"
         />
