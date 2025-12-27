@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <img src={LOGO_URL} alt="Krystal Magic World" className="h-12 brightness-0 invert" />
+              <KrystalLogo variant="light" size="md" />
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               Architectural luxury uPVC doors & windows for Delhi NCR since 2012. 
