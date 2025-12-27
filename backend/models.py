@@ -192,10 +192,10 @@ class Download(BaseModel):
 
 # Global Settings
 class ContactInfo(BaseModel):
-    phone: str = "+91 98765 43210"
-    whatsapp: str = "+91 98765 43210"
-    email: str = "info@krystalmagicworld.com"
-    address: str = "Sector 18, Gurugram, Haryana 122015"
+    phone: str = "+91 9220905087"
+    whatsapp: str = "+91 9599614440"
+    email: str = "sales@krystalmagicworld.com"
+    address: str = "403, 4th Floor, Greenwood Plaza, Sector-45, Near HSBC Building, Gurgaon - 122003 (Haryana)"
 
 class GlobalSettings(BaseModel):
     model_config = ConfigDict(extra="ignore")
