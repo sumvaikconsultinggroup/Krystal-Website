@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from 'lucide-react';
 import { Separator } from '../ui/separator';
-import KrystalLogo from '../common/KrystalLogo';
+
+const LOGO_URL = 'https://customer-assets.emergentagent.com/job_luxury-upvc/artifacts/5hyi3l5x_Black%20and%20White%20Minimalist%20Professional%20Initial%20Logo.png';
 
 const footerLinks = {
   products: [
