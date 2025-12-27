@@ -163,8 +163,50 @@ export default function ProductsWindowsPage() {
         </div>
       </section>
 
-      {/* Comparison Guide */}
+      {/* Interactive Design Explorer */}
+      <section className="section-spacing bg-white">
+        <div className="container">
+          <ProductDesignShowcase category="windows" />
+        </div>
+      </section>
+
+      {/* Design Configurator */}
       <section className="section-spacing bg-secondary/30">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="font-serif text-3xl sm:text-4xl mb-4">Window Panel Configurations</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Explore different panel arrangements with interactive 3D previews. Click to select your preferred design.
+            </p>
+          </motion.div>
+          
+          <Tabs defaultValue="casement" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-8">
+              <TabsTrigger value="casement">Casement</TabsTrigger>
+              <TabsTrigger value="sliding">Sliding</TabsTrigger>
+              <TabsTrigger value="tiltTurn">Tilt & Turn</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="casement">
+              <DesignConfigurator type="windows" productType="casement" />
+            </TabsContent>
+            <TabsContent value="sliding">
+              <DesignConfigurator type="windows" productType="sliding" />
+            </TabsContent>
+            <TabsContent value="tiltTurn">
+              <DesignConfigurator type="windows" productType="tiltTurn" />
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* Comparison Guide */}
+      <section className="section-spacing bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
