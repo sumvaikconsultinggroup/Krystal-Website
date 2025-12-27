@@ -3,27 +3,27 @@ from models import (
     ColorFinish, GlassOption, Hardware, Download, GlobalSettings, ContactInfo
 )
 
-# High-quality Unsplash images for architecture/windows
+# High-quality images for uPVC windows and doors
 IMAGES = {
-    "hero": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
-    "hero_2": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80",
-    "windows_1": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    "windows_2": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-    "windows_3": "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80",
-    "doors_1": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
-    "doors_2": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
-    "interior_1": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-    "interior_2": "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&q=80",
-    "villa_1": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-    "villa_2": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-    "commercial_1": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-    "glass_1": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    "glass_2": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
-    "texture_wood": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
-    "texture_white": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80",
-    "hardware_1": "https://images.unsplash.com/photo-1558618047-f4b511ce9c9f?w=400&q=80",
+    "hero": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80",
+    "hero_2": "https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80",
+    "windows_1": "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "windows_2": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "windows_3": "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "doors_1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "doors_2": "https://images.unsplash.com/photo-1525570665650-76bb26af503d?w=800&q=80",
+    "interior_1": "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "interior_2": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "villa_1": "https://images.pexels.com/photos/259580/pexels-photo-259580.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "villa_2": "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "commercial_1": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+    "glass_1": "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "glass_2": "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    "texture_wood": "https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=400&q=80",
+    "texture_white": "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=400&q=80",
+    "hardware_1": "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=400&q=80",
     "team_1": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
-    "factory_1": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    "factory_1": "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
 }
 
 # Products - Windows
@@ -539,9 +539,9 @@ DOWNLOADS = [
 
 GLOBAL_SETTINGS = GlobalSettings(
     contact=ContactInfo(
-        phone="+91 98765 43210",
-        whatsapp="+91 98765 43210",
-        email="info@krystalmagicworld.com",
-        address="Plot No. 45, Sector 18, Udyog Vihar, Gurugram, Haryana 122015"
+        phone="+91 9220905087",
+        whatsapp="+91 9599614440",
+        email="sales@krystalmagicworld.com",
+        address="403, 4th Floor, Greenwood Plaza, Sector-45, Near HSBC Building, Gurgaon - 122003 (Haryana)"
     )
 )
