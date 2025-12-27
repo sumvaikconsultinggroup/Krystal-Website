@@ -49,21 +49,21 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+919876543210"
+                href="tel:+919220905087"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4 text-[hsl(var(--accent))]" />
-                <span>+91 98765 43210</span>
+                <span>+91 9220905087</span>
               </a>
               <a
-                href="mailto:info@krystalmagicworld.com"
+                href="mailto:sales@krystalmagicworld.com"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4 text-[hsl(var(--accent))]" />
-                <span>info@krystalmagicworld.com</span>
+                <span>sales@krystalmagicworld.com</span>
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919599614440"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-gray-300 hover:text-[hsl(var(--accent))] transition-colors"
@@ -130,9 +130,9 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-[hsl(var(--accent))] flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-gray-400">
                   <p className="text-white font-medium mb-1">Head Office</p>
-                  <p>Plot No. 45, Sector 18,</p>
-                  <p>Udyog Vihar, Gurugram,</p>
-                  <p>Haryana 122015</p>
+                  <p>403, 4th Floor, Greenwood Plaza,</p>
+                  <p>Sector-45, Near HSBC Building,</p>
+                  <p>Gurgaon - 122003 (Haryana)</p>
                 </div>
               </div>
             </div>
