@@ -5,8 +5,7 @@ import { Menu, X, Phone, ChevronDown, MessageCircle } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 import QuoteModal from '../common/QuoteModal';
-
-const LOGO_URL = 'https://customer-assets.emergentagent.com/job_upvc-specialists/artifacts/2c6u16fh_logo%20png%20%284%29.jpg';
+import KrystalLogo from '../common/KrystalLogo';
 
 const navigation = {
   company: [
