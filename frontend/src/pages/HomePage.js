@@ -32,13 +32,6 @@ export default function HomePage() {
   const [projects, setProjects] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
   const [faqs, setFaqs] = useState([]);
-  
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start']
-  });
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
   useEffect(() => {
     const fetchData = async () => {
