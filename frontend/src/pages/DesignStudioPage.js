@@ -53,7 +53,7 @@ export default function DesignStudioPage() {
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1695209495576-db2a4788c802?w=1920&q=80"
+          src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
           alt="Design Studio"
           className="w-full h-full object-cover"
         />
