@@ -65,7 +65,7 @@ export default function AnimatedHero({ onGetQuote }) {
   return (
     <section 
       ref={heroRef} 
-      className="relative h-[100vh] min-h-[700px] overflow-hidden bg-[#1a2b3c]" 
+      className="relative h-[100vh] min-h-[700px] overflow-hidden bg-[#0a1628]" 
       data-testid="home-hero"
     >
       {/* Animated Background Image */}
@@ -76,21 +76,22 @@ export default function AnimatedHero({ onGetQuote }) {
         <motion.img
           src={HERO_IMAGE}
           alt="Premium uPVC Doors and Windows - The World at Your Doorstep"
-          className="w-full h-[120%] object-cover object-center"
+          className="w-full h-[120%] object-cover object-right-top"
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         />
         
-        {/* Animated gradient overlays */}
+        {/* Strong gradient overlays to blend with content */}
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/80 via-[#0a1628]/40 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/90 to-transparent"
+          style={{ width: '70%' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         />
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-[#0a1628]/30"
+          className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-[#0a1628]/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
