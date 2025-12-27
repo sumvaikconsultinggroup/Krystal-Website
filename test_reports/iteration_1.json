@@ -1,12 +1,20 @@
 {
-  "summary": "Completed comprehensive end-to-end testing of Krystal Magic World uPVC website. Backend API testing: 100% pass rate (27/27 tests). Frontend testing: All major pages, navigation, lead forms, and integrations working correctly.",
+  "summary": "Completed comprehensive end-to-end testing of Krystal Magic World uPVC website. Backend API testing: 100% pass rate (27/27 tests). Frontend testing: All major pages, navigation, lead forms, and integrations working correctly. One minor routing issue found with service area pages.",
   "backend_issues": {
     "critical_bugs": [],
     "flaky_endpoints": []
   },
   "frontend_issues": {
     "ui_bugs": [],
-    "integration_issues": [],
+    "integration_issues": [
+      {
+        "flow": "Service Area Pages",
+        "issue": "Route /upvc-windows-in-gurugram not matching - React Router shows 'No routes matched location'. Page loads header/footer but main content is blank.",
+        "affected_routes": ["/upvc-windows-in-:city", "/upvc-doors-in-:city"],
+        "fix_priority": "MEDIUM",
+        "note": "API endpoint /api/cities/gurugram works correctly (returns 200). Issue is in React Router configuration or ServiceAreaPage component rendering."
+      }
+    ],
     "design_issues": []
   },
   "passed_tests": [
