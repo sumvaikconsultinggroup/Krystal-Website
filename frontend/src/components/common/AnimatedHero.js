@@ -7,16 +7,16 @@ import { Button } from '../ui/button';
 // The exact image provided by user
 const HERO_IMAGE = 'https://customer-assets.emergentagent.com/job_luxury-upvc/artifacts/ddl3c2g4_freepik__attached-reference-posters-for-some-brand-image-3-__51788.jpeg';
 
-// Feature icons with animation
+// Feature icons with animation - Responsive sizes
 const FeatureIcon = ({ icon: Icon, label, delay }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: delay }}
-    className="flex flex-col items-center gap-2"
+    className="flex flex-col items-center gap-1 sm:gap-2"
   >
     <motion.div 
-      className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center"
+      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center"
       whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.2)' }}
       animate={{ 
         boxShadow: ['0 0 0 0 rgba(255,255,255,0.3)', '0 0 0 10px rgba(255,255,255,0)', '0 0 0 0 rgba(255,255,255,0)']
@@ -25,16 +25,16 @@ const FeatureIcon = ({ icon: Icon, label, delay }) => (
         boxShadow: { duration: 2, repeat: Infinity, delay: delay }
       }}
     >
-      <Icon className="w-6 h-6 text-white" />
+      <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
     </motion.div>
-    <span className="text-xs text-white/80 font-medium">{label}</span>
+    <span className="text-[10px] sm:text-xs text-white/80 font-medium text-center">{label}</span>
   </motion.div>
 );
 
-// Floating window/door element animation
+// Floating window/door element animation - Hidden on mobile
 const FloatingElement = ({ className, delay = 0 }) => (
   <motion.div
-    className={`absolute bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg ${className}`}
+    className={`absolute bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hidden lg:block ${className}`}
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ 
       opacity: [0.3, 0.6, 0.3],
@@ -65,10 +65,10 @@ export default function AnimatedHero({ onGetQuote }) {
   return (
     <section 
       ref={heroRef} 
-      className="relative h-[100vh] min-h-[700px] overflow-hidden bg-[#0a1628]" 
+      className="relative min-h-[100svh] sm:min-h-screen overflow-hidden bg-[#0a1628]" 
       data-testid="home-hero"
     >
-      {/* Animated Background Image */}
+      {/* Animated Background Image - Responsive positioning */}
       <motion.div
         style={{ y: heroY, scale: heroScale }}
         className="absolute inset-0"
@@ -76,16 +76,15 @@ export default function AnimatedHero({ onGetQuote }) {
         <motion.img
           src={HERO_IMAGE}
           alt="Premium uPVC Doors and Windows - The World at Your Doorstep"
-          className="w-full h-[120%] object-cover object-right-top"
+          className="w-full h-[120%] object-cover object-center sm:object-right-top"
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         />
         
-        {/* Strong gradient overlays to blend with content */}
+        {/* Gradient overlays - Responsive */}
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/90 to-transparent"
-          style={{ width: '70%' }}
+          className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/95 to-[#0a1628]/70 sm:via-[#0a1628]/90 sm:to-transparent"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -98,35 +97,35 @@ export default function AnimatedHero({ onGetQuote }) {
         />
       </motion.div>
 
-      {/* Floating decorative elements */}
+      {/* Floating decorative elements - Desktop only */}
       <FloatingElement className="w-32 h-48 top-[20%] right-[15%]" delay={0} />
       <FloatingElement className="w-24 h-36 top-[40%] right-[8%]" delay={0.5} />
       <FloatingElement className="w-20 h-28 bottom-[25%] right-[20%]" delay={1} />
 
-      {/* Main Content */}
-      <div className="relative container h-full flex items-center">
+      {/* Main Content - Fully responsive */}
+      <div className="relative container h-full min-h-[100svh] sm:min-h-screen flex items-center py-20 sm:py-0">
         <motion.div
           style={{ y: textY, opacity: heroOpacity }}
-          className="max-w-3xl"
+          className="max-w-3xl w-full"
         >
-          {/* Animated badge */}
+          {/* Animated badge - Responsive */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 sm:mb-6"
           >
             <motion.span 
-              className="w-2 h-2 rounded-full bg-[#00d4ff]"
+              className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#00d4ff]"
               animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
-            <span className="text-sm text-white/90 font-medium">Premium uPVC Solutions Since 2012</span>
+            <span className="text-xs sm:text-sm text-white/90 font-medium">Premium uPVC Solutions Since 2012</span>
           </motion.div>
 
-          {/* Main headline with word-by-word animation */}
+          {/* Main headline - Fully responsive */}
           <motion.h1 
-            className="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-white mb-6"
+            className="font-serif text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-white mb-4 sm:mb-6"
           >
             {['THE', 'WORLD', 'AT YOUR', 'DOORSTEP.'].map((word, index) => (
               <motion.span
@@ -145,23 +144,23 @@ export default function AnimatedHero({ onGetQuote }) {
             ))}
           </motion.h1>
 
-          {/* Subtitle with fade-in */}
+          {/* Subtitle - Responsive */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="text-lg sm:text-xl text-white/70 mb-8 max-w-xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-white/70 mb-6 sm:mb-8 max-w-xl leading-relaxed"
           >
             Premium uPVC Doors & Windows. Weather Resistant & Durable. 
             Transforming Delhi NCR homes with German engineering.
           </motion.p>
 
-          {/* Feature icons row */}
+          {/* Feature icons row - Responsive grid */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.5 }}
-            className="flex flex-wrap gap-6 mb-10"
+            className="grid grid-cols-4 gap-2 sm:flex sm:flex-wrap sm:gap-4 md:gap-6 mb-6 sm:mb-10"
           >
             <FeatureIcon icon={Thermometer} label="Heat Resistant" delay={1.6} />
             <FeatureIcon icon={Droplets} label="Water Resistant" delay={1.7} />
@@ -169,35 +168,37 @@ export default function AnimatedHero({ onGetQuote }) {
             <FeatureIcon icon={Volume2} label="Sound Resistant" delay={1.9} />
           </motion.div>
 
-          {/* CTA Buttons with staggered animation */}
+          {/* CTA Buttons - Responsive */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              className="w-full sm:w-auto"
             >
               <Button
                 size="lg"
                 onClick={onGetQuote}
-                className="bg-[#00d4ff] text-[#0a1628] hover:bg-[#00d4ff]/90 font-semibold px-8 py-6 text-base shadow-lg shadow-[#00d4ff]/20"
+                className="w-full sm:w-auto bg-[#00d4ff] text-[#0a1628] hover:bg-[#00d4ff]/90 font-semibold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base shadow-lg shadow-[#00d4ff]/20"
                 data-testid="get-quote-button"
               >
                 Get a Free Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              className="w-full sm:w-auto"
             >
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-base backdrop-blur-sm"
+                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base backdrop-blur-sm"
                 asChild
                 data-testid="explore-range-button"
               >
@@ -210,30 +211,30 @@ export default function AnimatedHero({ onGetQuote }) {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - Hidden on very small screens */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 2.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-2 hidden sm:flex"
       >
-        <span className="text-white/50 text-xs uppercase tracking-widest">Scroll</span>
+        <span className="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
         <motion.div
-          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
+          className="w-5 h-8 sm:w-6 sm:h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5 sm:p-2"
           animate={{ borderColor: ['rgba(255,255,255,0.3)', 'rgba(255,255,255,0.5)', 'rgba(255,255,255,0.3)'] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           <motion.div
-            className="w-1.5 h-1.5 rounded-full bg-white/80"
-            animate={{ y: [0, 12, 0] }}
+            className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white/80"
+            animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
       </motion.div>
 
-      {/* Animated corner accent */}
+      {/* Animated corner accent - Desktop only */}
       <motion.div
-        className="absolute top-0 right-0 w-96 h-96 pointer-events-none"
+        className="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 pointer-events-none hidden md:block"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
