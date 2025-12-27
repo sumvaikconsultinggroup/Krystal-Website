@@ -71,57 +71,8 @@ export default function HomePage() {
         {faqs.length > 0 && <script type="application/ld+json">{JSON.stringify(getFAQSchema(faqs))}</script>}
       </Helmet>
 
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative h-[90vh] min-h-[600px] overflow-hidden" data-testid="home-hero">
-        <motion.div
-          style={{ y: heroY }}
-          className="absolute inset-0"
-        >
-          <img
-            src={HERO_IMAGE}
-            alt="Modern architectural home with uPVC windows"
-            className="w-full h-[110%] object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
-        </motion.div>
-        
-        <div className="relative container h-full flex items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl text-white"
-          >
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6">
-              Architectural uPVC Systems for Quiet, Light-Filled Spaces
-            </h1>
-            <p className="text-lg text-white/80 mb-8 max-w-xl">
-              Premium craftsmanship, tailored fabrication, and professional installation. 
-              Transforming Delhi NCR homes since 2012.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                onClick={() => setQuoteModalOpen(true)}
-                className="bg-white text-black hover:bg-white/90"
-                data-testid="get-quote-button"
-              >
-                Get a Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10"
-                asChild
-                data-testid="book-site-visit-button"
-              >
-                <Link to="/contact">Book Site Visit</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Animated Hero Section */}
+      <AnimatedHero onGetQuote={() => setQuoteModalOpen(true)} />
 
       {/* Trust Strip */}
       <section className="bg-white border-y border-border" data-testid="trust-strip">
