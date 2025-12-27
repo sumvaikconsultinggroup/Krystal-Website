@@ -7,8 +7,8 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { getBreadcrumbSchema } from '../lib/seo';
 
-const ABOUT_HERO = 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80';
-const FACTORY_IMAGE = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80';
+const ABOUT_HERO = 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80';
+const FACTORY_IMAGE = 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800&q=80';
 
 const stats = [
   { value: '12+', label: 'Years Experience', icon: Award },
