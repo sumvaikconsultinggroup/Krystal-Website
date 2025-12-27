@@ -1,0 +1,66 @@
+[
+  {
+    "content": "Phase 2: Get design guidelines from design_agent",
+    "status": "in_progress"
+  },
+  {
+    "content": "Phase 2: Install dependencies (TailwindCSS, Framer Motion, react-router-dom, react-helmet-async)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Backend - Create models (Lead, Product, Project, Blog, FAQ, Testimonial, City)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Backend - Create API endpoints (/api/leads, /api/products, /api/projects, etc.)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Backend - Seed initial content with Unsplash images",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Build Header/MegaMenu/Footer/StickyCTA components",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Build Home page with all sections",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Build Company pages (About, Infrastructure, Quality, Process, Careers)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Build Products pages (Windows/Doors landing + detail templates)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Build Design Studio pages (Colours, Glass, Hardware, Inspirations)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Build Solutions, Projects, Resources, Partner, Contact pages",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Frontend - Build SEO Service Area dynamic pages",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Implement lead forms (Get Quote, Site Visit, Contact multi-step)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: SEO implementation (Helmet, JSON-LD, sitemap.xml)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: End-to-end testing using Testing Agent",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: All user stories covered in Development and testing",
+    "status": "pending"
+  }
+]
