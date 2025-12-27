@@ -202,7 +202,7 @@ export default function Header() {
               <SheetContent side="right" className="w-[300px] sm:w-[350px]">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between mb-8">
-                    <KrystalLogo variant="dark" size="sm" />
+                    <img src={LOGO_URL} alt="Krystal" className="h-10" />
                   </div>
                   
                   <nav className="flex-1 space-y-6">
