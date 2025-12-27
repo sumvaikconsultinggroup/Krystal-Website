@@ -57,10 +57,14 @@
   },
   {
     "content": "Phase 2: End-to-end testing using Testing Agent",
-    "status": "in_progress"
+    "status": "completed"
+  },
+  {
+    "content": "Phase 2: Update contact details and images based on user feedback",
+    "status": "completed"
   },
   {
     "content": "Phase 2: All user stories covered in Development and testing",
-    "status": "pending"
+    "status": "completed"
   }
 ]
