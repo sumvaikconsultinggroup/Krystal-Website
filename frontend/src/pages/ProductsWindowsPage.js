@@ -5,8 +5,11 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { getProducts } from '../lib/api';
 import { getBreadcrumbSchema } from '../lib/seo';
+import DesignConfigurator from '../components/common/DesignConfigurator';
+import ProductDesignShowcase from '../components/common/ProductDesignShowcase';
 
 export default function ProductsWindowsPage() {
   const [products, setProducts] = useState([]);
