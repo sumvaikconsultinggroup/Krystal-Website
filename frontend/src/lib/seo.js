@@ -6,13 +6,13 @@ export const SITE_CONFIG = {
   description: 'Premium uPVC doors & windows for Delhi NCR. Superior acoustic, thermal & dust protection since 2012.',
   url: 'https://krystalmagicworld.com',
   logo: 'https://customer-assets.emergentagent.com/job_upvc-specialists/artifacts/2c6u16fh_logo%20png%20%284%29.jpg',
-  phone: '+91 98765 43210',
-  email: 'info@krystalmagicworld.com',
+  phone: '+91 9220905087',
+  email: 'sales@krystalmagicworld.com',
   address: {
-    street: 'Plot No. 45, Sector 18, Udyog Vihar',
-    city: 'Gurugram',
+    street: '403, 4th Floor, Greenwood Plaza, Sector-45, Near HSBC Building',
+    city: 'Gurgaon',
     state: 'Haryana',
-    postalCode: '122015',
+    postalCode: '122003',
     country: 'IN'
   }
 };
