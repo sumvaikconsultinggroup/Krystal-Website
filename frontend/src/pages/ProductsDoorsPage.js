@@ -181,10 +181,10 @@ export default function ProductsDoorsPage() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { title: 'Patio Access', desc: 'Sliding and bi-fold doors for garden connection', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80' },
-              { title: 'Balconies', desc: 'Space-saving sliding doors for high-rise living', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80' },
-              { title: 'Main Entrance', desc: 'Secure casement doors with premium hardware', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80' },
-              { title: 'Pool Areas', desc: 'Weather-resistant doors for outdoor transitions', image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&q=80' },
+              { title: 'Patio Access', desc: 'Sliding and bi-fold doors for garden connection', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400&q=80' },
+              { title: 'Balconies', desc: 'Space-saving sliding doors for high-rise living', image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400&q=80' },
+              { title: 'Main Entrance', desc: 'Secure casement doors with premium hardware', image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=400&q=80' },
+              { title: 'Pool Areas', desc: 'Weather-resistant doors for outdoor transitions', image: 'https://images.pexels.com/photos/259580/pexels-photo-259580.jpeg?auto=compress&cs=tinysrgb&w=400&q=80' },
             ].map((item, index) => (
               <motion.div
                 key={item.title}
