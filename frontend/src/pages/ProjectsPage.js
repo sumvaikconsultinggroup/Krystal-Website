@@ -61,7 +61,7 @@ export default function ProjectsPage() {
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
+          src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
           alt="Krystal Projects"
           className="w-full h-full object-cover"
         />
