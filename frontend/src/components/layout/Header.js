@@ -143,11 +143,7 @@ export default function Header() {
           <nav className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link to="/" className="flex-shrink-0" data-testid="header-logo">
-              <img
-                src={LOGO_URL}
-                alt="Krystal Magic World"
-                className="h-10 lg:h-12 w-auto"
-              />
+              <KrystalLogo variant="dark" size="md" />
             </Link>
 
             {/* Desktop Navigation */}
