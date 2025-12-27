@@ -153,18 +153,84 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hide platform badges */
+/* Hide platform badges - More comprehensive selectors */
 [class*="emergent"],
 [data-testid*="emergent"],
 a[href*="emergent"],
 div[class*="Emergent"],
 .emergent-badge,
 #emergent-badge,
-[id*="emergent"] {
+[id*="emergent"],
+[class*="made-with"],
+[id*="made-with"],
+div[style*="position: fixed"][style*="bottom"],
+div[style*="position: fixed"][style*="right"]:not([data-testid]) {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 374px) {
+  /* Extra small phones */
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 639px) {
+  /* Mobile phones */
+  h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .section-spacing {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Large phones / Small tablets */
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablets / iPads */
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Safe area insets for notched devices (iPhone X+) */
+@supports (padding: max(0px)) {
+  .safe-area-padding {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+  button, 
+  a, 
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 /* Reduce motion for accessibility */
