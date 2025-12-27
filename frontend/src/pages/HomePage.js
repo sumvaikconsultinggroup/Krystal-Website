@@ -534,7 +534,7 @@ export default function HomePage() {
                 className="border-white text-white hover:bg-white/10"
                 asChild
               >
-                <a href="tel:+919876543210">Call +91 98765 43210</a>
+                <a href="tel:+919220905087">Call +91 9220905087</a>
               </Button>
             </div>
           </motion.div>
