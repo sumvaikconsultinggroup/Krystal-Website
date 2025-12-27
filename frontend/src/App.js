@@ -45,8 +45,8 @@ function App() {
               <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/faqs" element={<FAQsPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/upvc-windows-in-:city" element={<ServiceAreaPage type="windows" />} />
-              <Route path="/upvc-doors-in-:city" element={<ServiceAreaPage type="doors" />} />
+              <Route path="/upvc-windows-in-:city/*" element={<ServiceAreaPage type="windows" />} />
+              <Route path="/upvc-doors-in-:city/*" element={<ServiceAreaPage type="doors" />} />
             </Routes>
           </main>
           <Footer />
