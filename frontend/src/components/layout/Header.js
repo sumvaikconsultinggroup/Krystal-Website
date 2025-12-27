@@ -119,14 +119,14 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-6">
               <a
-                href="tel:+919876543210"
+                href="tel:+919220905087"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +91 98765 43210
+                +91 9220905087
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919599614440"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[hsl(var(--accent))] hover:text-[hsl(var(--accent))]/80 transition-colors"
@@ -273,7 +273,7 @@ export default function Header() {
                       <Link to="/contact">Book Site Visit</Link>
                     </Button>
                     <a
-                      href="https://wa.me/919876543210"
+                      href="https://wa.me/919599614440"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 py-2 text-[hsl(var(--accent))]"
