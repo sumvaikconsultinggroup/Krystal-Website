@@ -5,7 +5,8 @@ import { Menu, X, Phone, ChevronDown, MessageCircle } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 import QuoteModal from '../common/QuoteModal';
-import KrystalLogo from '../common/KrystalLogo';
+
+const LOGO_URL = 'https://customer-assets.emergentagent.com/job_luxury-upvc/artifacts/5hyi3l5x_Black%20and%20White%20Minimalist%20Professional%20Initial%20Logo.png';
 
 const navigation = {
   company: [
