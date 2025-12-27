@@ -153,6 +153,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide platform badges */
+[class*="emergent"],
+[data-testid*="emergent"],
+a[href*="emergent"],
+div[class*="Emergent"],
+.emergent-badge,
+#emergent-badge,
+[id*="emergent"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
