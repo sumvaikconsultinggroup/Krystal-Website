@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from 'lucide-react';
 import { Separator } from '../ui/separator';
-
-const LOGO_URL = 'https://customer-assets.emergentagent.com/job_upvc-specialists/artifacts/2c6u16fh_logo%20png%20%284%29.jpg';
+import KrystalLogo from '../common/KrystalLogo';
 
 const footerLinks = {
   products: [
