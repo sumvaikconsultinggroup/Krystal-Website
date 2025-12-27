@@ -7,10 +7,9 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import QuoteModal from '../components/common/QuoteModal';
+import AnimatedHero from '../components/common/AnimatedHero';
 import { getProducts, getProjects, getTestimonials, getFAQs } from '../lib/api';
 import { getOrganizationSchema, getLocalBusinessSchema, getFAQSchema } from '../lib/seo';
-
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=compress&cs=tinysrgb&w=1920&q=80';
 
 const features = [
   { icon: Volume2, title: 'Acoustic Comfort', description: 'Up to 47dB noise reduction for peaceful living' },
