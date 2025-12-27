@@ -298,22 +298,22 @@ export default function HomePage() {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
+                src="https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
                 alt="Wood grain finish"
                 className="rounded-lg w-full h-48 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80"
+                src="https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
                 alt="White uPVC finish"
                 className="rounded-lg w-full h-48 object-cover mt-8"
               />
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80"
+                src="https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
                 alt="Glass options"
                 className="rounded-lg w-full h-48 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1558618047-f4b511ce9c9f?w=400&q=80"
+                src="https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
                 alt="Hardware options"
                 className="rounded-lg w-full h-48 object-cover mt-8"
               />
