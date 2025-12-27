@@ -22,7 +22,7 @@ export default function StickyCTA() {
           </button>
           
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919599614440"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center justify-center py-3 text-[hsl(var(--accent))] hover:bg-secondary transition-colors"
@@ -33,7 +33,7 @@ export default function StickyCTA() {
           </a>
           
           <a
-            href="tel:+919876543210"
+            href="tel:+919220905087"
             className="flex flex-col items-center justify-center py-3 text-foreground hover:bg-secondary transition-colors"
             data-testid="sticky-cta-call-link"
           >
