@@ -175,7 +175,7 @@ export default function HomePage() {
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow product-card">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+                      src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800&q=80"
                       alt="uPVC Windows"
                       className="w-full h-full object-cover product-image"
                     />
@@ -203,7 +203,7 @@ export default function HomePage() {
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow product-card">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80"
+                      src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800&q=80"
                       alt="uPVC Doors"
                       className="w-full h-full object-cover product-image"
                     />
