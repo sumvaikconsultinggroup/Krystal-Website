@@ -170,8 +170,50 @@ export default function ProductsDoorsPage() {
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* Interactive Design Explorer */}
+      <section className="section-spacing bg-white">
+        <div className="container">
+          <ProductDesignShowcase category="doors" />
+        </div>
+      </section>
+
+      {/* Design Configurator */}
       <section className="section-spacing bg-secondary/30">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="font-serif text-3xl sm:text-4xl mb-4">Door Panel Configurations</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Explore different panel arrangements with interactive 3D previews. Click to select your preferred design.
+            </p>
+          </motion.div>
+          
+          <Tabs defaultValue="sliding" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-8">
+              <TabsTrigger value="sliding">Sliding</TabsTrigger>
+              <TabsTrigger value="bifold">Bi-fold</TabsTrigger>
+              <TabsTrigger value="casement">Casement</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="sliding">
+              <DesignConfigurator type="doors" productType="sliding" />
+            </TabsContent>
+            <TabsContent value="bifold">
+              <DesignConfigurator type="doors" productType="bifold" />
+            </TabsContent>
+            <TabsContent value="casement">
+              <DesignConfigurator type="doors" productType="casement" />
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="section-spacing bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
