@@ -432,8 +432,14 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <a href="tel:+919876543210" className="text-muted-foreground hover:text-foreground">
-                        +91 98765 43210
+                      <a href="tel:+919220905087" className="text-muted-foreground hover:text-foreground block">
+                        +91 9220905087
+                      </a>
+                      <a href="tel:+919810609664" className="text-muted-foreground hover:text-foreground block">
+                        +91 9810609664
+                      </a>
+                      <a href="tel:+919599614440" className="text-muted-foreground hover:text-foreground block">
+                        +91 9599614440
                       </a>
                     </div>
                   </div>
@@ -445,7 +451,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">WhatsApp</h3>
                       <a
-                        href="https://wa.me/919876543210"
+                        href="https://wa.me/919599614440"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[hsl(var(--accent))] hover:underline"
@@ -461,8 +467,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <a href="mailto:info@krystalmagicworld.com" className="text-muted-foreground hover:text-foreground">
-                        info@krystalmagicworld.com
+                      <a href="mailto:sales@krystalmagicworld.com" className="text-muted-foreground hover:text-foreground">
+                        sales@krystalmagicworld.com
                       </a>
                     </div>
                   </div>
@@ -474,9 +480,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Address</h3>
                       <p className="text-muted-foreground">
-                        Plot No. 45, Sector 18,<br />
-                        Udyog Vihar, Gurugram,<br />
-                        Haryana 122015
+                        403, 4th Floor, Greenwood Plaza,<br />
+                        Sector-45, Near HSBC Building,<br />
+                        Gurgaon - 122003 (Haryana)
                       </p>
                     </div>
                   </div>
