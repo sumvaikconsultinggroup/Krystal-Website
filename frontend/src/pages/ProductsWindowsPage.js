@@ -87,18 +87,13 @@ export default function ProductsWindowsPage() {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
           poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=compress&cs=tinysrgb&w=1920&q=80"
         >
           <source 
             src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/waaz0zj6_freepik__children-opens-the-complete-door-and-then-gone-ins__15013.mp4" 
             type="video/mp4" 
-          />
-          {/* Fallback image if video doesn't load */}
-          <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=compress&cs=tinysrgb&w=1920&q=80"
-            alt="Premium uPVC Windows"
-            className="w-full h-full object-cover"
           />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
