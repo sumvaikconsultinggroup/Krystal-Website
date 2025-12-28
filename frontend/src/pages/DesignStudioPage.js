@@ -882,7 +882,7 @@ export default function DesignStudioPage() {
       {/* Hero Section */}
       <section className="relative h-[45vh] min-h-[350px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=compress&cs=tinysrgb&w=1920&q=80"
+          src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/azaaditl_freepik__create-a-image-of-a-premium-luxury-glass-villa-sho__15014.jpeg"
           alt="Design Studio"
           className="w-full h-full object-cover"
         />
