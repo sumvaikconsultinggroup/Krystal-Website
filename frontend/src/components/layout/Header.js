@@ -201,8 +201,8 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[320px] sm:w-[380px] p-0 flex flex-col h-full">
                 {/* Fixed Header with Larger Logo */}
-                <div className="flex items-center justify-between px-6 py-5 border-b border-border flex-shrink-0">
-                  <img src={LOGO_URL} alt="Krystal" className="h-20 sm:h-24 w-auto" />
+                <div className="flex items-center justify-between px-6 py-4 border-b border-border flex-shrink-0 bg-black">
+                  <img src={LOGO_URL} alt="Krystal" className="h-24 sm:h-28 w-auto object-contain" />
                 </div>
                 
                 {/* Scrollable Navigation */}
