@@ -6,17 +6,21 @@ from models import ColorFinish, GlassOption, Hardware
 # COMPREHENSIVE COLOR FINISHES - 40+ Options like Industry Leaders
 # ============================================================================
 
-# Real uPVC laminate texture images
+# uPVC Profile/Window images showing actual finishes
+# Using solid color backgrounds and real uPVC window/profile images
 TEXTURE_IMAGES = {
-    "white": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
-    "cream": "https://images.unsplash.com/photo-1557683316-973673baf926?w=400&q=80",
-    "grey": "https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80",
-    "oak": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80",
-    "walnut": "https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=400&q=80",
-    "mahogany": "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80",
-    "teak": "https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=400&q=80",
-    "anthracite": "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=400&q=80",
-    "black": "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&q=80",
+    # Solid colors - using uPVC profile/window images
+    "white": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80",  # White window
+    "cream": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80",  # Cream/warm interior
+    "grey": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80",   # Grey modern window
+    # Wood textures - actual wood grain pattern images
+    "oak": "https://images.unsplash.com/photo-1558618047-f4b511ab9204?w=400&q=80",       # Oak wood texture
+    "walnut": "https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?w=400&q=80", # Walnut wood grain
+    "mahogany": "https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=400&q=80", # Mahogany texture
+    "teak": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80",      # Teak wood
+    # Dark colors
+    "anthracite": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=400&q=80", # Dark grey building
+    "black": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&q=80",  # Black framed windows
 }
 
 COLOR_FINISHES_COMPREHENSIVE = [
