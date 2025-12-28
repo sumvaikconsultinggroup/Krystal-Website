@@ -451,53 +451,291 @@ const ColorSwatchCard = ({ color, isSelected, onClick, viewMode }) => {
 };
 
 // ============================================================================
-// COMPONENT: Glass Option Card
+// COMPONENT: Glass Option Card - Shows glass cross-section visualization
 // ============================================================================
-const GlassOptionCard = ({ glass, onSelect }) => (
-  <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full">
-    <div className="relative aspect-video overflow-hidden">
-      <img
-        src={glass.image}
-        alt={glass.name}
-        className="w-full h-full object-cover"
-        loading="lazy"
-      />
-      {glass.popular && (
-        <Badge className="absolute top-3 right-3 bg-[hsl(var(--accent))]">
-          Recommended
-        </Badge>
-      )}
-    </div>
-    <CardContent className="p-5">
-      <h3 className="font-semibold text-lg mb-2">{glass.name}</h3>
-      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{glass.description}</p>
-      
-      {/* Technical Specs */}
-      <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
-        <div className="bg-secondary/50 rounded p-2">
-          <span className="text-muted-foreground block">U-Value</span>
-          <span className="font-semibold">{glass.uValue}</span>
-        </div>
-        <div className="bg-secondary/50 rounded p-2">
-          <span className="text-muted-foreground block">Sound</span>
-          <span className="font-semibold">{glass.soundReduction}</span>
-        </div>
-        <div className="bg-secondary/50 rounded p-2">
-          <span className="text-muted-foreground block">Light</span>
-          <span className="font-semibold">{glass.lightTransmission}</span>
-        </div>
-        <div className="bg-secondary/50 rounded p-2">
-          <span className="text-muted-foreground block">Thickness</span>
-          <span className="font-semibold text-[10px]">{glass.thickness.split('/')[0]}</span>
-        </div>
+const GlassOptionCard = ({ glass, onSelect }) => {
+  // Generate glass visualization based on type
+  const getGlassVisualization = () => {
+    const baseClasses = "w-full h-full relative overflow-hidden";
+    
+    switch(glass.id) {
+      case 'clear-float':
+        // Single clear glass pane
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-sky-50 to-blue-100`}>
+            {/* Glass pane representation */}
+            <div className="absolute inset-4 bg-gradient-to-br from-white/80 via-sky-100/60 to-blue-200/40 rounded-sm border border-sky-200/50 shadow-inner">
+              {/* Light reflection effect */}
+              <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-sky-200/30 to-transparent" />
+            </div>
+            {/* Floating label */}
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-sky-800 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Single Pane
+            </div>
+          </div>
+        );
+        
+      case 'dgu-standard':
+      case 'dgu-argon':
+        // Double glazed unit - two panes with gap
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-slate-100 to-slate-200`}>
+            <div className="absolute inset-4 flex">
+              {/* Outer pane */}
+              <div className="w-[35%] bg-gradient-to-br from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-l-sm border-l border-t border-b border-sky-300/50 shadow-lg relative">
+                <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/50 to-transparent" />
+              </div>
+              {/* Air/Argon gap */}
+              <div className="flex-1 bg-gradient-to-b from-slate-50 via-white to-slate-50 flex items-center justify-center border-t border-b border-dashed border-slate-300">
+                <span className="text-[10px] text-slate-500 font-medium rotate-90 whitespace-nowrap">
+                  {glass.id === 'dgu-argon' ? 'Argon Gas' : 'Air Gap'}
+                </span>
+              </div>
+              {/* Inner pane */}
+              <div className="w-[35%] bg-gradient-to-bl from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-r-sm border-r border-t border-b border-sky-300/50 shadow-lg relative">
+                <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/50 to-transparent" />
+              </div>
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-slate-700 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Double Glazed
+            </div>
+          </div>
+        );
+        
+      case 'low-e':
+        // Low-E glass with coating indication
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-emerald-50 to-teal-100`}>
+            <div className="absolute inset-4 flex">
+              {/* Outer pane with Low-E coating */}
+              <div className="w-[35%] relative rounded-l-sm overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-100/90 via-sky-200/70 to-blue-300/50 border-l border-t border-b border-sky-300/50" />
+                {/* Low-E coating stripe */}
+                <div className="absolute right-0 top-0 bottom-0 w-2 bg-gradient-to-r from-transparent via-emerald-400/60 to-emerald-500/40" />
+                <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/50 to-transparent" />
+              </div>
+              {/* Gap */}
+              <div className="flex-1 bg-gradient-to-b from-emerald-50/50 via-white to-emerald-50/50 flex items-center justify-center border-t border-b border-dashed border-emerald-300">
+                <span className="text-[10px] text-emerald-600 font-medium rotate-90 whitespace-nowrap">Low-E</span>
+              </div>
+              {/* Inner pane */}
+              <div className="w-[35%] bg-gradient-to-bl from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-r-sm border-r border-t border-b border-sky-300/50 relative">
+                <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/50 to-transparent" />
+              </div>
+            </div>
+            {/* Heat arrows */}
+            <div className="absolute top-6 right-6 flex flex-col gap-1">
+              <div className="flex items-center gap-1">
+                <span className="text-[8px] text-emerald-600">Heat</span>
+                <svg className="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M19 12H5M5 12L9 8M5 12L9 16" />
+                </svg>
+              </div>
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-emerald-700 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Low Emissivity
+            </div>
+          </div>
+        );
+        
+      case 'triple-glazed':
+        // Triple glazed - three panes
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-indigo-50 to-purple-100`}>
+            <div className="absolute inset-4 flex">
+              {/* Outer pane */}
+              <div className="w-[22%] bg-gradient-to-br from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-l-sm border-l border-t border-b border-sky-300/50 shadow-lg" />
+              {/* Gap 1 */}
+              <div className="w-[12%] bg-gradient-to-b from-indigo-50/50 via-white to-indigo-50/50 border-t border-b border-dashed border-indigo-200" />
+              {/* Middle pane */}
+              <div className="w-[22%] bg-gradient-to-b from-sky-100/90 via-sky-200/70 to-blue-300/50 border-t border-b border-sky-300/50 shadow" />
+              {/* Gap 2 */}
+              <div className="w-[12%] bg-gradient-to-b from-indigo-50/50 via-white to-indigo-50/50 border-t border-b border-dashed border-indigo-200" />
+              {/* Inner pane */}
+              <div className="w-[22%] bg-gradient-to-bl from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-r-sm border-r border-t border-b border-sky-300/50 shadow-lg" />
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-indigo-700 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Triple Glazed
+            </div>
+          </div>
+        );
+        
+      case 'laminated':
+        // Laminated glass with PVB layer
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-amber-50 to-orange-100`}>
+            <div className="absolute inset-4 flex items-stretch">
+              {/* Outer glass */}
+              <div className="w-[40%] bg-gradient-to-br from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-l-sm border-l border-t border-b border-sky-300/50 shadow relative">
+                <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/50 to-transparent" />
+              </div>
+              {/* PVB interlayer */}
+              <div className="w-[10%] bg-gradient-to-b from-amber-200 via-amber-300 to-amber-200 flex items-center justify-center">
+                <span className="text-[8px] text-amber-800 font-bold rotate-90">PVB</span>
+              </div>
+              {/* Inner glass */}
+              <div className="w-[40%] bg-gradient-to-bl from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-r-sm border-r border-t border-b border-sky-300/50 shadow relative">
+                <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/50 to-transparent" />
+              </div>
+            </div>
+            {/* Safety indicator */}
+            <div className="absolute top-3 right-3">
+              <Shield className="w-5 h-5 text-amber-600" />
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-amber-700 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Safety Laminated
+            </div>
+          </div>
+        );
+        
+      case 'toughened':
+        // Toughened/tempered glass with stress pattern
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-slate-100 to-zinc-200`}>
+            <div className="absolute inset-4 bg-gradient-to-br from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-sm border border-sky-300/50 shadow-lg relative overflow-hidden">
+              {/* Stress pattern visualization */}
+              <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 100 100">
+                <pattern id="stress" patternUnits="userSpaceOnUse" width="20" height="20">
+                  <circle cx="10" cy="10" r="8" fill="none" stroke="#64748b" strokeWidth="0.5" />
+                </pattern>
+                <rect width="100" height="100" fill="url(#stress)" />
+              </svg>
+              <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/50 to-transparent" />
+            </div>
+            {/* Strength indicator */}
+            <div className="absolute top-3 right-3 flex items-center gap-1 text-slate-600">
+              <span className="text-[10px] font-bold">4×</span>
+              <Shield className="w-4 h-4" />
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-slate-700 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Tempered
+            </div>
+          </div>
+        );
+        
+      case 'acoustic':
+        // Acoustic glass with sound wave indication
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-violet-50 to-purple-100`}>
+            <div className="absolute inset-4 flex items-stretch">
+              {/* Outer glass */}
+              <div className="w-[35%] bg-gradient-to-br from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-l-sm border-l border-t border-b border-sky-300/50 shadow" />
+              {/* Acoustic PVB interlayer */}
+              <div className="w-[15%] bg-gradient-to-b from-violet-300 via-purple-400 to-violet-300 flex items-center justify-center">
+                <span className="text-[7px] text-white font-bold rotate-90 whitespace-nowrap">Acoustic PVB</span>
+              </div>
+              {/* Inner glass */}
+              <div className="w-[35%] bg-gradient-to-bl from-sky-100/90 via-sky-200/70 to-blue-300/50 rounded-r-sm border-r border-t border-b border-sky-300/50 shadow" />
+            </div>
+            {/* Sound wave indicator */}
+            <div className="absolute top-3 left-3">
+              <svg className="w-6 h-6 text-violet-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" strokeOpacity="0.5" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" strokeOpacity="0.3" />
+              </svg>
+            </div>
+            <div className="absolute top-3 right-3 text-violet-600 text-xs font-bold">
+              -47dB
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-violet-700 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Acoustic Laminated
+            </div>
+          </div>
+        );
+        
+      case 'frosted':
+        // Frosted/obscure glass with diffused effect
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-gray-100 to-slate-200`}>
+            <div className="absolute inset-4 bg-gradient-to-br from-white/95 via-gray-100/90 to-slate-200/80 rounded-sm border border-gray-300/50 shadow-lg relative overflow-hidden">
+              {/* Frosted texture effect */}
+              <div className="absolute inset-0 backdrop-blur-sm bg-white/40" />
+              <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 100">
+                <filter id="noise">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" />
+                </filter>
+                <rect width="100" height="100" filter="url(#noise)" />
+              </svg>
+              {/* Privacy icon */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Eye className="w-8 h-8 text-gray-400 opacity-50" strokeWidth="1" />
+                <div className="absolute w-10 h-0.5 bg-gray-400/50 rotate-45" />
+              </div>
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-gray-700 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Privacy Glass
+            </div>
+          </div>
+        );
+        
+      case 'tinted':
+        // Tinted/solar control glass
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-amber-100 to-yellow-200`}>
+            <div className="absolute inset-4 bg-gradient-to-br from-amber-200/80 via-yellow-300/60 to-orange-200/50 rounded-sm border border-amber-300/50 shadow-lg relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/30 to-transparent" />
+            </div>
+            {/* Sun indicator */}
+            <div className="absolute top-3 right-3">
+              <Sun className="w-5 h-5 text-amber-500" />
+            </div>
+            <div className="absolute bottom-3 left-3 text-xs font-medium text-amber-800 bg-white/80 px-2 py-1 rounded backdrop-blur-sm">
+              Solar Control
+            </div>
+          </div>
+        );
+        
+      default:
+        return (
+          <div className={`${baseClasses} bg-gradient-to-br from-sky-50 to-blue-100`}>
+            <div className="absolute inset-4 bg-gradient-to-br from-white/80 via-sky-100/60 to-blue-200/40 rounded-sm border border-sky-200/50 shadow-inner" />
+          </div>
+        );
+    }
+  };
+
+  return (
+    <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full border-gray-200 hover:border-[hsl(var(--accent))]/30">
+      <div className="relative aspect-video overflow-hidden">
+        {getGlassVisualization()}
+        {glass.popular && (
+          <Badge className="absolute top-3 right-3 bg-[hsl(var(--accent))] text-white shadow-md z-10">
+            Recommended
+          </Badge>
+        )}
       </div>
-      
-      {/* Benefits */}
-      <div className="space-y-1 mb-4">
-        {glass.benefits.slice(0, 3).map((benefit, idx) => (
-          <div key={idx} className="flex items-center gap-2 text-sm">
-            <Check className="w-3 h-3 text-[hsl(var(--accent))] flex-shrink-0" />
-            <span className="text-muted-foreground">{benefit}</span>
+      <CardContent className="p-5">
+        <h3 className="font-semibold text-lg mb-2">{glass.name}</h3>
+        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{glass.description}</p>
+        
+        {/* Technical Specs */}
+        <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+          <div className="bg-secondary/50 rounded p-2">
+            <span className="text-muted-foreground block">U-Value</span>
+            <span className="font-semibold">{glass.uValue}</span>
+          </div>
+          <div className="bg-secondary/50 rounded p-2">
+            <span className="text-muted-foreground block">Sound</span>
+            <span className="font-semibold">{glass.soundReduction}</span>
+          </div>
+          <div className="bg-secondary/50 rounded p-2">
+            <span className="text-muted-foreground block">Light</span>
+            <span className="font-semibold">{glass.lightTransmission}</span>
+          </div>
+          <div className="bg-secondary/50 rounded p-2">
+            <span className="text-muted-foreground block">Thickness</span>
+            <span className="font-semibold text-[10px]">{glass.thickness.split('/')[0]}</span>
+          </div>
+        </div>
+        
+        {/* Benefits */}
+        <div className="space-y-1 mb-4">
+          {glass.benefits.slice(0, 3).map((benefit, idx) => (
+            <div key={idx} className="flex items-center gap-2 text-sm">
+              <Check className="w-3 h-3 text-[hsl(var(--accent))] flex-shrink-0" />
+              <span className="text-muted-foreground">{benefit}</span>
           </div>
         ))}
       </div>
