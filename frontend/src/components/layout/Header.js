@@ -200,9 +200,9 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[320px] sm:w-[380px] p-0 flex flex-col h-full">
-                {/* Fixed Header - White background, reduced height, larger logo */}
-                <div className="flex items-center px-4 py-1 border-b border-border flex-shrink-0 bg-white">
-                  <img src={LOGO_URL} alt="Krystal" className="h-44 sm:h-48 w-auto" />
+                {/* Fixed Header - Minimal height, larger logo */}
+                <div className="flex items-center px-4 border-b border-border flex-shrink-0 bg-white overflow-hidden" style={{height: '50px'}}>
+                  <img src={LOGO_URL} alt="Krystal" className="h-48 w-auto -my-10" />
                 </div>
                 
                 {/* Scrollable Navigation */}
