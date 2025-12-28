@@ -373,7 +373,7 @@ Even the best windows fail if poorly installed. Ensure:
 Ready to enjoy peaceful living? Contact Krystal for a noise assessment.""",
         category="acoustic",
         tags=["noise reduction", "acoustic glass", "urban living", "sleep quality"],
-        hero_image=IMAGES["interior_1"],
+        hero_image="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/upquus9f_Acoustics.jpeg",
         read_time=6
     ),
     BlogPost(
@@ -421,7 +421,7 @@ Typical savings with energy-efficient uPVC windows:
 Invest in quality windows—they pay for themselves within 3-5 years.""",
         category="energy",
         tags=["energy saving", "thermal insulation", "AC costs", "low-e glass"],
-        hero_image=IMAGES["glass_1"],
+        hero_image="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/jwhyl7lq_Energy%20Homes.jpeg",
         read_time=5
     ),
     BlogPost(
