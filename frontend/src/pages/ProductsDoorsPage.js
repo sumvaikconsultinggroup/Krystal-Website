@@ -304,10 +304,10 @@ export default function ProductsDoorsPage() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { title: 'Patio Access', desc: 'Sliding and bi-fold doors for garden connection', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80' },
-              { title: 'Balconies', desc: 'Space-saving sliding doors for high-rise living', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80' },
-              { title: 'Main Entrance', desc: 'Secure casement doors with premium hardware', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80' },
-              { title: 'Pool Areas', desc: 'Weather-resistant doors for outdoor transitions', image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=400&q=80' },
+              { title: 'Patio Access', desc: 'Sliding and bi-fold doors for garden connection', image: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/25xbt5gn_Patio.png' },
+              { title: 'Balconies', desc: 'Space-saving sliding doors for high-rise living', image: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/xw5h9ff1_Balcony.png' },
+              { title: 'Main Entrance', desc: 'Secure casement doors with premium hardware', image: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/6cjf8sfw_Enterance.png' },
+              { title: 'Pool Areas', desc: 'Weather-resistant doors for outdoor transitions', image: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/qgcewy54_Pool%20Area.png' },
             ].map((item, index) => (
               <motion.div
                 key={item.title}
