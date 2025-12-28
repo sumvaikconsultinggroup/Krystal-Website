@@ -3,15 +3,21 @@ from models import (
     ColorFinish, GlassOption, Hardware, Download, GlobalSettings, ContactInfo
 )
 
-# High-quality images for uPVC windows and doors
+# High-quality images for uPVC windows and doors - Premium architectural photography
 IMAGES = {
     "hero": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80",
     "hero_2": "https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80",
-    "windows_1": "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
-    "windows_2": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
-    "windows_3": "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    # Premium Window Images - Actual window focus
+    "casement_window": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",  # White casement window in modern home
+    "sliding_window": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",  # Large sliding window
+    "tilt_turn_window": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",  # Modern tilt & turn
+    "fixed_window": "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&q=80",  # Large fixed window with view
+    "top_hung_window": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",  # Awning window
+    "french_window": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",  # French windows floor to ceiling
+    # Door Images
     "doors_1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
     "doors_2": "https://images.unsplash.com/photo-1525570665650-76bb26af503d?w=800&q=80",
+    # Interior/Villa
     "interior_1": "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
     "interior_2": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
     "villa_1": "https://images.pexels.com/photos/259580/pexels-photo-259580.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
@@ -36,8 +42,8 @@ WINDOWS_PRODUCTS = [
         product_type="casement",
         short_description="Classic side-hinged windows with excellent ventilation and unobstructed views.",
         description="Our casement windows combine timeless design with modern uPVC technology. Opening outward on side hinges, they provide maximum ventilation and easy cleaning. The multi-point locking system ensures superior security while the premium weathersealing delivers exceptional acoustic and thermal performance.",
-        hero_image=IMAGES["windows_1"],
-        gallery=[IMAGES["windows_1"], IMAGES["interior_1"], IMAGES["glass_1"]],
+        hero_image=IMAGES["casement_window"],
+        gallery=[IMAGES["casement_window"], IMAGES["interior_1"], IMAGES["glass_1"]],
         features=["Multi-point locking system", "90° opening capability", "Easy-clean hinges", "Friction stays for controlled opening", "Child-safe restrictors available"],
         benefits=["Superior ventilation", "Unobstructed views", "Easy maintenance", "Enhanced security", "Weather resistant"],
         use_cases=["Living rooms", "Bedrooms", "Study rooms", "Home offices"],
@@ -60,8 +66,8 @@ WINDOWS_PRODUCTS = [
         product_type="sliding",
         short_description="Space-saving horizontal sliding windows ideal for modern apartments and balconies.",
         description="Sliding windows glide horizontally on smooth roller tracks, making them perfect for areas where space is at a premium. Our uPVC sliding windows feature precision-engineered rollers for effortless operation, interlock design for enhanced security, and superior weathersealing for comfort in all seasons.",
-        hero_image=IMAGES["windows_2"],
-        gallery=[IMAGES["windows_2"], IMAGES["interior_2"], IMAGES["villa_1"]],
+        hero_image=IMAGES["sliding_window"],
+        gallery=[IMAGES["sliding_window"], IMAGES["interior_2"], IMAGES["villa_1"]],
         features=["Smooth roller mechanism", "Interlock design", "Multi-track options", "Mosquito mesh compatible", "Anti-lift blocks"],
         benefits=["Space efficient", "Easy operation", "Modern aesthetics", "Excellent for balconies", "Low maintenance"],
         use_cases=["Balconies", "Apartments", "High-rise buildings", "Compact spaces"],
@@ -84,8 +90,8 @@ WINDOWS_PRODUCTS = [
         product_type="tilt_turn",
         short_description="Versatile European-style windows with dual opening modes for ventilation and cleaning.",
         description="Tilt and turn windows offer the ultimate in flexibility. Tilt inward from the top for secure ventilation, or turn fully inward for easy cleaning and maximum airflow. The sophisticated German-engineered hardware ensures smooth operation and outstanding security.",
-        hero_image=IMAGES["windows_3"],
-        gallery=[IMAGES["windows_3"], IMAGES["interior_1"], IMAGES["glass_2"]],
+        hero_image=IMAGES["tilt_turn_window"],
+        gallery=[IMAGES["tilt_turn_window"], IMAGES["interior_1"], IMAGES["glass_2"]],
         features=["Dual-mode operation", "German hardware", "Inward opening", "Multi-point locking", "Night vent position"],
         benefits=["Secure ventilation", "Easy cleaning from inside", "European design", "Child-safe vent mode", "Superior sealing"],
         use_cases=["High-rise apartments", "Bedrooms", "Children's rooms", "Offices"],
