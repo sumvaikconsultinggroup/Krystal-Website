@@ -35,10 +35,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-white" data-testid="site-footer">
       {/* Main Footer - Two Row Layout */}
-      <div className="container py-12 lg:py-16">
+      <div className="container py-8">
         {/* Top Row - Large Logo Centered */}
-        <div className="flex flex-col items-center text-center mb-12 pb-10 border-b border-white/10">
-          <Link to="/" className="inline-block mb-6">
+        <div className="flex flex-col items-center text-center mb-8 pb-6 border-b border-white/10">
+          <Link to="/" className="inline-block mb-[22px]">
             <img 
               src={LOGO_URL} 
               alt="Krystal - uPVC Doors & Windows" 
@@ -46,7 +46,7 @@ export default function Footer() {
               loading="lazy"
             />
           </Link>
-          <p className="text-gray-400 text-base max-w-2xl leading-relaxed mb-6">
+          <p className="text-gray-400 text-base max-w-2xl leading-relaxed mb-4">
             Architectural luxury uPVC doors & windows for Delhi NCR since 2012. 
             Superior acoustic, thermal & dust protection for discerning homes.
           </p>
