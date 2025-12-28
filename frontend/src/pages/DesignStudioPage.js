@@ -32,48 +32,49 @@ import { cn } from '../lib/utils';
 
 // ============================================================================
 // COMPREHENSIVE COLOR DATA - 40+ Industry Standard Colors
+// Using 'useColorSwatch: true' to render the actual color instead of an image
 // ============================================================================
 const COLOR_FINISHES = [
   // SOLID COLORS
-  { id: 'brilliant-white', name: 'Brilliant White', code: '#FFFFFF', category: 'solid', popular: true, image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  { id: 'cream-white', name: 'Cream White', code: '#FFFEF0', category: 'solid', image: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=400&q=80' },
-  { id: 'ivory', name: 'Ivory', code: '#FFFFF0', category: 'solid', image: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=400&q=80' },
-  { id: 'champagne', name: 'Champagne', code: '#F7E7CE', category: 'solid', image: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=400&q=80' },
-  { id: 'anthracite-grey', name: 'Anthracite Grey', code: '#383E42', category: 'solid', popular: true, image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
-  { id: 'slate-grey', name: 'Slate Grey', code: '#708090', category: 'solid', image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
-  { id: 'agate-grey', name: 'Agate Grey', code: '#B5B5B5', category: 'solid', image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
-  { id: 'quartz-grey', name: 'Quartz Grey', code: '#6C6C6C', category: 'solid', image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
-  { id: 'jet-black', name: 'Jet Black', code: '#0A0A0A', category: 'solid', popular: true, image: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=400&q=80' },
-  { id: 'smooth-black', name: 'Smooth Black', code: '#1C1C1C', category: 'solid', image: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=400&q=80' },
-  { id: 'racing-green', name: 'Racing Green', code: '#0B3D0B', category: 'solid', image: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=400&q=80' },
-  { id: 'steel-blue', name: 'Steel Blue', code: '#4682B4', category: 'solid', image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
+  { id: 'brilliant-white', name: 'Brilliant White', code: '#FFFFFF', category: 'solid', popular: true, useColorSwatch: true, description: 'Classic pure white - the most popular choice for modern homes' },
+  { id: 'cream-white', name: 'Cream White', code: '#FFFEF0', category: 'solid', useColorSwatch: true, description: 'Soft warm white with subtle cream undertone' },
+  { id: 'ivory', name: 'Ivory', code: '#FFFFF0', category: 'solid', useColorSwatch: true, description: 'Warm off-white shade for traditional architecture' },
+  { id: 'champagne', name: 'Champagne', code: '#F7E7CE', category: 'solid', useColorSwatch: true, description: 'Luxurious champagne gold undertone' },
+  { id: 'anthracite-grey', name: 'Anthracite Grey', code: '#383E42', category: 'solid', popular: true, useColorSwatch: true, description: 'Deep charcoal grey - a modern classic' },
+  { id: 'slate-grey', name: 'Slate Grey', code: '#708090', category: 'solid', useColorSwatch: true, description: 'Medium grey with blue undertone' },
+  { id: 'agate-grey', name: 'Agate Grey', code: '#B5B5B5', category: 'solid', useColorSwatch: true, description: 'Light silver grey, subtle and refined' },
+  { id: 'quartz-grey', name: 'Quartz Grey', code: '#6C6C6C', category: 'solid', useColorSwatch: true, description: 'Neutral mid-grey, versatile for any style' },
+  { id: 'jet-black', name: 'Jet Black', code: '#0A0A0A', category: 'solid', popular: true, useColorSwatch: true, description: 'Premium black finish for bold statements' },
+  { id: 'smooth-black', name: 'Smooth Black', code: '#1C1C1C', category: 'solid', useColorSwatch: true, description: 'Deep black with smooth satin texture' },
+  { id: 'racing-green', name: 'Racing Green', code: '#0B3D0B', category: 'solid', useColorSwatch: true, description: 'Classic British racing green' },
+  { id: 'steel-blue', name: 'Steel Blue', code: '#4682B4', category: 'solid', useColorSwatch: true, description: 'Deep steel blue, coastal inspired' },
   
-  // WOODGRAIN TEXTURES
-  { id: 'golden-oak', name: 'Golden Oak', code: '#B5651D', category: 'woodgrain', popular: true, image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'irish-oak', name: 'Irish Oak', code: '#A0522D', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'natural-oak', name: 'Natural Oak', code: '#C4A76D', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'rustic-oak', name: 'Rustic Oak', code: '#8B7355', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'winchester-oak', name: 'Winchester Oak', code: '#6B4423', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=400&q=80' },
-  { id: 'walnut', name: 'Walnut', code: '#5D4037', category: 'woodgrain', popular: true, image: 'https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=400&q=80' },
-  { id: 'dark-walnut', name: 'Dark Walnut', code: '#3E2723', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=400&q=80' },
-  { id: 'mahogany', name: 'Mahogany', code: '#4E0000', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80' },
-  { id: 'rosewood', name: 'Rosewood', code: '#65000B', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80' },
-  { id: 'cherry', name: 'Cherry', code: '#7B3F00', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80' },
-  { id: 'teak', name: 'Teak', code: '#6E4C1E', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=400&q=80' },
-  { id: 'sheesham', name: 'Sheesham', code: '#8B4513', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=400&q=80' },
-  { id: 'grey-oak', name: 'Grey Oak', code: '#808069', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
-  { id: 'white-oak', name: 'White Oak', code: '#D2B48C', category: 'woodgrain', image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
+  // WOODGRAIN TEXTURES - These show wood grain pattern preview
+  { id: 'golden-oak', name: 'Golden Oak', code: '#B5651D', category: 'woodgrain', popular: true, useColorSwatch: true, isWoodgrain: true, description: 'Classic golden oak with visible grain pattern' },
+  { id: 'irish-oak', name: 'Irish Oak', code: '#A0522D', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Lighter oak with reddish undertones' },
+  { id: 'natural-oak', name: 'Natural Oak', code: '#C4A76D', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Light natural oak, Scandinavian style' },
+  { id: 'rustic-oak', name: 'Rustic Oak', code: '#8B7355', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Weathered oak with character marks' },
+  { id: 'winchester-oak', name: 'Winchester Oak', code: '#6B4423', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Deep amber oak, rich and traditional' },
+  { id: 'walnut', name: 'Walnut', code: '#5D4037', category: 'woodgrain', popular: true, useColorSwatch: true, isWoodgrain: true, description: 'Dark chocolate walnut, luxurious' },
+  { id: 'dark-walnut', name: 'Dark Walnut', code: '#3E2723', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Extra-dark walnut, dramatic appeal' },
+  { id: 'mahogany', name: 'Mahogany', code: '#4E0000', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Rich red-brown mahogany' },
+  { id: 'rosewood', name: 'Rosewood', code: '#65000B', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Deep rose-tinted exotic wood' },
+  { id: 'cherry', name: 'Cherry', code: '#7B3F00', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Warm cherry wood tones' },
+  { id: 'teak', name: 'Teak', code: '#6E4C1E', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Classic teak, tropical warmth' },
+  { id: 'sheesham', name: 'Sheesham', code: '#8B4513', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Indian rosewood pattern' },
+  { id: 'grey-oak', name: 'Grey Oak', code: '#808069', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Weathered grey oak, contemporary rustic' },
+  { id: 'white-oak', name: 'White Oak', code: '#D2B48C', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Pale blonde oak, Scandinavian feel' },
   
   // METALLIC
-  { id: 'brushed-aluminium', name: 'Brushed Aluminium', code: '#A8A9AD', category: 'metallic', image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
-  { id: 'silver-grey', name: 'Silver Grey', code: '#C0C0C0', category: 'metallic', image: 'https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?w=400&q=80' },
-  { id: 'bronze', name: 'Bronze', code: '#CD7F32', category: 'metallic', image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=400&q=80' },
-  { id: 'copper', name: 'Copper', code: '#B87333', category: 'metallic', image: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=400&q=80' },
+  { id: 'brushed-aluminium', name: 'Brushed Aluminium', code: '#A8A9AD', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Industrial brushed metal look' },
+  { id: 'silver-grey', name: 'Silver Grey', code: '#C0C0C0', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Clean silver metallic' },
+  { id: 'bronze', name: 'Bronze', code: '#CD7F32', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Warm bronze metallic' },
+  { id: 'copper', name: 'Copper', code: '#B87333', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Antique copper finish' },
   
   // DUAL COLOR
-  { id: 'white-grey', name: 'White / Anthracite Grey', code: '#FFFFFF', category: 'dual', popular: true, secondaryCode: '#383E42', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  { id: 'white-oak-dual', name: 'White / Golden Oak', code: '#FFFFFF', category: 'dual', secondaryCode: '#B5651D', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  { id: 'white-black', name: 'White / Jet Black', code: '#FFFFFF', category: 'dual', secondaryCode: '#0A0A0A', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
+  { id: 'white-grey', name: 'White / Anthracite Grey', code: '#FFFFFF', category: 'dual', popular: true, secondaryCode: '#383E42', useColorSwatch: true, description: 'White interior, Grey exterior' },
+  { id: 'white-oak-dual', name: 'White / Golden Oak', code: '#FFFFFF', category: 'dual', secondaryCode: '#B5651D', useColorSwatch: true, description: 'White interior, Oak exterior' },
+  { id: 'white-black', name: 'White / Jet Black', code: '#FFFFFF', category: 'dual', secondaryCode: '#0A0A0A', useColorSwatch: true, description: 'White interior, Black exterior' },
 ];
 
 // ============================================================================
