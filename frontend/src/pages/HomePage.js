@@ -486,8 +486,8 @@ export default function HomePage() {
             
             {/* First Row - Scrolling Left */}
             <motion.div
-              className="flex gap-8 mb-6"
-              animate={{ x: [0, -1600] }}
+              className="flex gap-6 mb-5"
+              animate={{ x: [0, -1500] }}
               transition={{
                 x: {
                   repeat: Infinity,
@@ -514,21 +514,21 @@ export default function HomePage() {
                 <motion.div
                   key={`row1-${client.name}-${index}`}
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className={`flex-shrink-0 flex items-center justify-center h-16 w-40 rounded-lg transition-all duration-300 group cursor-pointer ${
+                  className={`flex-shrink-0 flex items-center justify-center h-14 w-36 rounded-lg transition-all duration-300 group cursor-pointer overflow-hidden ${
                     client.darkBg 
-                      ? 'bg-[#1a1a1a] shadow-md hover:shadow-xl' 
+                      ? 'bg-[#111] shadow-md hover:shadow-xl' 
                       : 'bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300'
                   }`}
                 >
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
-                    className={`h-10 w-auto max-w-[120px] object-contain transition-all duration-400 ${
+                    className={`h-8 w-auto max-w-[100px] object-contain transition-all duration-400 ${
                       client.darkBg 
-                        ? 'opacity-90 group-hover:opacity-100' 
-                        : 'opacity-70 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
+                        ? 'brightness-100' 
+                        : 'opacity-60 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
                     }`}
-                    style={!client.darkBg ? { mixBlendMode: 'multiply' } : {}}
+                    style={!client.darkBg ? { mixBlendMode: 'darken' } : {}}
                   />
                 </motion.div>
               ))}
@@ -536,8 +536,8 @@ export default function HomePage() {
 
             {/* Second Row - Scrolling Right */}
             <motion.div
-              className="flex gap-8"
-              animate={{ x: [-1600, 0] }}
+              className="flex gap-6"
+              animate={{ x: [-1500, 0] }}
               transition={{
                 x: {
                   repeat: Infinity,
@@ -562,21 +562,21 @@ export default function HomePage() {
                 <motion.div
                   key={`row2-${client.name}-${index}`}
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className={`flex-shrink-0 flex items-center justify-center h-16 w-40 rounded-lg transition-all duration-300 group cursor-pointer ${
+                  className={`flex-shrink-0 flex items-center justify-center h-14 w-36 rounded-lg transition-all duration-300 group cursor-pointer overflow-hidden ${
                     client.darkBg 
-                      ? 'bg-[#1a1a1a] shadow-md hover:shadow-xl' 
+                      ? 'bg-[#111] shadow-md hover:shadow-xl' 
                       : 'bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300'
                   }`}
                 >
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
-                    className={`h-10 w-auto max-w-[120px] object-contain transition-all duration-400 ${
+                    className={`h-8 w-auto max-w-[100px] object-contain transition-all duration-400 ${
                       client.darkBg 
-                        ? 'opacity-90 group-hover:opacity-100' 
-                        : 'opacity-70 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
+                        ? 'brightness-100' 
+                        : 'opacity-60 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
                     }`}
-                    style={!client.darkBg ? { mixBlendMode: 'multiply' } : {}}
+                    style={!client.darkBg ? { mixBlendMode: 'darken' } : {}}
                   />
                 </motion.div>
               ))}
