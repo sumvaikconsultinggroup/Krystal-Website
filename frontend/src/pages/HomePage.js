@@ -295,23 +295,23 @@ export default function HomePage() {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src="https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
-                alt="Wood grain finish"
+                src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/iuclvi9j_freepik__create-a-image-of-a-premium-upvc-doors-and-windows__15022.png"
+                alt="Premium uPVC doors and windows"
                 className="rounded-lg w-full h-48 object-cover"
               />
               <img
-                src="https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
-                alt="White uPVC finish"
+                src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/gmanoihn_freepik__create-a-image-of-a-premium-upvc-sliding-door-in-a__15021.jpeg"
+                alt="Premium uPVC sliding door"
                 className="rounded-lg w-full h-48 object-cover mt-8"
               />
               <img
-                src="https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
-                alt="Glass options"
+                src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/l73a2ntp_freepik__create-a-image-of-a-premium-upvc-window-glasses-of__15020.png"
+                alt="Premium uPVC window glasses"
                 className="rounded-lg w-full h-48 object-cover"
               />
               <img
-                src="https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=400&q=80"
-                alt="Hardware options"
+                src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/jvc98p0z_freepik__create-a-image-of-a-premium-upvc-door-handle-profi__15019.png"
+                alt="Premium uPVC door handle"
                 className="rounded-lg w-full h-48 object-cover mt-8"
               />
             </motion.div>
