@@ -22,6 +22,8 @@ import BlogPostPage from './pages/BlogPostPage';
 import FAQsPage from './pages/FAQsPage';
 import ContactPage from './pages/ContactPage';
 import ServiceAreaPage from './pages/ServiceAreaPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
 
 import './App.css';
 
@@ -45,6 +47,8 @@ function App() {
               <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/faqs" element={<FAQsPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
               <Route path="/upvc-windows-in-:city/*" element={<ServiceAreaPage type="windows" />} />
               <Route path="/upvc-doors-in-:city/*" element={<ServiceAreaPage type="doors" />} />
             </Routes>
