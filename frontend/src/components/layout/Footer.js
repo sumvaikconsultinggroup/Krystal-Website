@@ -44,7 +44,7 @@ export default function Footer() {
               <img 
                 src={LOGO_URL} 
                 alt="Krystal - uPVC Doors & Windows" 
-                className="h-14 w-auto brightness-0 invert" 
+                className="h-72 w-auto brightness-0 invert" 
               />
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
