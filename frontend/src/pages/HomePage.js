@@ -146,7 +146,7 @@ export default function HomePage() {
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow product-card">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=compress&cs=tinysrgb&w=800&q=80"
+                      src="https://customer-assets.emergentagent.com/job_luxury-upvc/artifacts/rwhc06k5_freepik__image-1-is-logo-and-image-2-is-reference-image-cre__15010.jpeg"
                       alt="uPVC Doors"
                       className="w-full h-full object-cover product-image"
                     />
