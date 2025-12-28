@@ -8,10 +8,10 @@ IMAGES = {
     "hero": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80",
     "hero_2": "https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80",
     # Premium Window Images - User provided images
-    "casement_window": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",  # Modern home exterior with windows
+    "casement_window": "https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/h35z2via_Casement.png",  # User provided Casement
     "sliding_window": "https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/yj34d8qa_Sliding.png",  # User provided Sliding
     "tilt_turn_window": "https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/ruuzup5o_Tilt%20and%20Turn.png",  # User provided Tilt & Turn
-    "fixed_window": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",  # Large fixed window with view
+    "fixed_window": "https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/kalvevar_Fixed.png",  # User provided Fixed
     "top_hung_window": "https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/yi6vpufb_Top%20Hund%20Ventilator.png",  # User provided Top Hung
     "french_window": "https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/dsy4xd9o_French.png",  # User provided French
     # Door Images
