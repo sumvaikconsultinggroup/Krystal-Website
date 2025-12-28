@@ -72,13 +72,27 @@ export default function ProductsDoorsPage() {
         <script type="application/ld+json">{JSON.stringify(getBreadcrumbSchema(breadcrumbs))}</script>
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero Section with Video */}
       <section className="relative h-[55vh] min-h-[450px] overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=compress&cs=tinysrgb&w=1920&q=80"
-          alt="Premium uPVC Doors"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+          poster="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=compress&cs=tinysrgb&w=1920&q=80"
+        >
+          <source 
+            src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/waaz0zj6_freepik__children-opens-the-complete-door-and-then-gone-ins__15013.mp4" 
+            type="video/mp4" 
+          />
+          {/* Fallback image if video doesn't load */}
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=compress&cs=tinysrgb&w=1920&q=80"
+            alt="Premium uPVC Doors"
+            className="w-full h-full object-cover"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         <div className="absolute inset-0 flex items-center">
           <div className="container">
