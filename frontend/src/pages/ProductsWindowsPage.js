@@ -81,13 +81,13 @@ export default function ProductsWindowsPage() {
       </Helmet>
 
       {/* Hero Section with Video */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-black">
+      <section className="relative h-[70vh] min-h-[550px] overflow-hidden">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=compress&cs=tinysrgb&w=1920&q=80"
         >
           <source 
