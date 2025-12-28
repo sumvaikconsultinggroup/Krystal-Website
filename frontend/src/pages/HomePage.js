@@ -485,17 +485,17 @@ export default function HomePage() {
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 items-center justify-items-center"
           >
             {[
-              { name: 'DLF', color: '#003366' },
-              { name: 'M3M', color: '#1a1a1a' },
-              { name: 'Suncity Projects', color: '#b8860b' },
-              { name: 'Amity University', color: '#8B0000' },
-              { name: 'KIIT University', color: '#1e3a5f' },
-              { name: 'Delta Group', color: '#2d5a27' },
-              { name: 'Godrej Properties', color: '#5a2d82' },
-              { name: 'Power Grid', color: '#0066b3' },
-              { name: 'Suzuki', color: '#c41e3a' },
-              { name: 'Tata Motors', color: '#00205b' },
-              { name: 'BMW', color: '#0066b1' },
+              { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png' },
+              { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png' },
+              { name: 'Suncity Projects', logo: null, color: '#b8860b' },
+              { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg' },
+              { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg' },
+              { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg' },
+              { name: 'Godrej Properties', logo: null, color: '#5a2d82' },
+              { name: 'Power Grid', logo: null, color: '#0066b3' },
+              { name: 'Suzuki', logo: null, color: '#c41e3a' },
+              { name: 'Tata Motors', logo: null, color: '#00205b' },
+              { name: 'BMW', logo: null, color: '#0066b1' },
             ].map((client, index) => (
               <motion.div
                 key={client.name}
@@ -503,15 +503,23 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="flex items-center justify-center p-5 h-20 w-full rounded-xl border border-gray-100 bg-gradient-to-br from-gray-50 to-white hover:shadow-md hover:border-gray-200 transition-all duration-300 group cursor-default"
+                className="flex items-center justify-center p-4 h-24 w-full rounded-xl border border-gray-100 bg-white hover:shadow-lg hover:border-gray-200 transition-all duration-300 group"
                 data-testid={`client-logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <span 
-                  className="text-sm md:text-base font-bold text-center leading-tight transition-colors duration-300"
-                  style={{ color: client.color }}
-                >
-                  {client.name}
-                </span>
+                {client.logo ? (
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="max-h-16 max-w-[140px] w-auto object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                  />
+                ) : (
+                  <span 
+                    className="text-sm md:text-base font-bold text-center leading-tight transition-colors duration-300"
+                    style={{ color: client.color }}
+                  >
+                    {client.name}
+                  </span>
+                )}
               </motion.div>
             ))}
           </motion.div>
