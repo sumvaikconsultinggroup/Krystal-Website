@@ -12,7 +12,7 @@ import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { getBreadcrumbSchema } from '../lib/seo';
 
-const ABOUT_HERO = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=compress&cs=tinysrgb&w=1920&q=80';
+const ABOUT_HERO = 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/hhqekiye_freepik__create-a-image-of-a-premium-luxury-glass-villa-sho__15015.jpeg';
 const FACTORY_IMAGE = 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=compress&cs=tinysrgb&w=800&q=80';
 const QUALITY_IMAGE = 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=compress&cs=tinysrgb&w=800&q=80';
 
