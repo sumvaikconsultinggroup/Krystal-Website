@@ -482,20 +482,20 @@ export default function HomePage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-items-center"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 items-center justify-items-center"
           >
             {[
-              { name: 'DLF', logo: 'https://logo.clearbit.com/dlf.in' },
-              { name: 'M3M', logo: 'https://logo.clearbit.com/m3mindia.com' },
-              { name: 'Suncity Projects', logo: 'https://logo.clearbit.com/suncityprojects.com' },
-              { name: 'Amity University', logo: 'https://logo.clearbit.com/amity.edu' },
-              { name: 'KIIT University', logo: 'https://logo.clearbit.com/kiit.ac.in' },
-              { name: 'Delta Group', logo: 'https://logo.clearbit.com/deltacorp.in' },
-              { name: 'Godrej Properties', logo: 'https://logo.clearbit.com/godrejproperties.com' },
-              { name: 'Power Grid', logo: 'https://logo.clearbit.com/powergrid.in' },
-              { name: 'Suzuki', logo: 'https://logo.clearbit.com/suzuki.co.in' },
-              { name: 'Tata Motors', logo: 'https://logo.clearbit.com/tatamotors.com' },
-              { name: 'BMW', logo: 'https://logo.clearbit.com/bmw.in' },
+              { name: 'DLF', color: '#003366' },
+              { name: 'M3M', color: '#1a1a1a' },
+              { name: 'Suncity Projects', color: '#b8860b' },
+              { name: 'Amity University', color: '#8B0000' },
+              { name: 'KIIT University', color: '#1e3a5f' },
+              { name: 'Delta Group', color: '#2d5a27' },
+              { name: 'Godrej Properties', color: '#5a2d82' },
+              { name: 'Power Grid', color: '#0066b3' },
+              { name: 'Suzuki', color: '#c41e3a' },
+              { name: 'Tata Motors', color: '#00205b' },
+              { name: 'BMW', color: '#0066b1' },
             ].map((client, index) => (
               <motion.div
                 key={client.name}
@@ -503,19 +503,13 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="flex items-center justify-center p-4 h-20 w-full rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300 group"
+                className="flex items-center justify-center p-5 h-20 w-full rounded-xl border border-gray-100 bg-gradient-to-br from-gray-50 to-white hover:shadow-md hover:border-gray-200 transition-all duration-300 group cursor-default"
                 data-testid={`client-logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <img
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  className="max-h-10 md:max-h-12 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-300"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'block';
-                  }}
-                />
-                <span className="hidden text-sm md:text-base font-semibold text-gray-500 group-hover:text-gray-700 transition-colors">
+                <span 
+                  className="text-sm md:text-base font-bold text-center leading-tight transition-colors duration-300"
+                  style={{ color: client.color }}
+                >
                   {client.name}
                 </span>
               </motion.div>
