@@ -16,10 +16,10 @@ import InteractiveProductShowcase from '../components/common/InteractiveProductS
 const doorGalleryImages = {
   designs: [
     { src: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/ly6l2nl8_Patio%20Access.png', alt: 'Modern sliding glass doors to patio', caption: 'Sliding Doors - Patio Access', badge: 'Popular' },
-    { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80', alt: 'Bi-fold doors opening to garden', caption: 'Bi-fold Doors - Garden View' },
+    { src: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/0csd21mt_Bi-Fold%20Garden%20View.png', alt: 'Bi-fold doors opening to garden', caption: 'Bi-fold Doors - Garden View' },
     { src: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/h8f6140c_French%20Door%20Living%20room.png', alt: 'French doors with elegant design', caption: 'French Doors - Living Room' },
     { src: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/e6rlvdko_Lift%20and%20Slide%20Premium.png', alt: 'Lift and slide door system', caption: 'Lift & Slide - Premium' },
-    { src: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80', alt: 'Large sliding doors with view', caption: 'Sliding Doors - Scenic View' },
+    { src: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/7anp1ysl_Sliding%20Doors%20Scienic%20View.png', alt: 'Large sliding doors with view', caption: 'Sliding Doors - Scenic View' },
     { src: 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/ds1nf7gy_Pool%20View.png', alt: 'Pool area with glass doors', caption: 'Sliding Doors - Pool Area' },
   ],
   installations: [
