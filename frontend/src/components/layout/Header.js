@@ -202,7 +202,7 @@ export default function Header() {
               <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0 flex flex-col">
                 {/* Fixed Header with Logo */}
                 <div className="flex items-center justify-between p-6 pb-4 border-b border-border flex-shrink-0">
-                  <img src={LOGO_URL} alt="Krystal" className="h-14 w-auto" />
+                  <img src={LOGO_URL} alt="Krystal" className="h-16 sm:h-20 w-auto" />
                 </div>
                 
                 {/* Scrollable Navigation */}
