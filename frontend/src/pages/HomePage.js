@@ -463,7 +463,7 @@ export default function HomePage() {
       )}
 
       {/* Our Clients Section - Premium Animated */}
-      <section className="section-spacing bg-gradient-to-b from-gray-50 to-white overflow-hidden" data-testid="our-clients-section">
+      <section className="section-spacing bg-white overflow-hidden" data-testid="our-clients-section">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -478,109 +478,38 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* Animated Logo Marquee */}
-          <div className="relative">
-            {/* Gradient Overlays for smooth fade effect */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none" />
-            
-            {/* First Row - Scrolling Left */}
-            <motion.div
-              className="flex gap-6 mb-5"
-              animate={{ x: [0, -1500] }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 35,
-                  ease: "linear",
-                },
-              }}
-            >
-              {[
-                { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png' },
-                { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png', darkBg: true },
-                { name: 'Suncity Projects', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/y8z7tvaa_suncity-projects_uyaYZoO.png', darkBg: true },
-                { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg' },
-                { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg' },
-                { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg' },
-                { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png' },
-                { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png', darkBg: true },
-                { name: 'Suncity Projects', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/y8z7tvaa_suncity-projects_uyaYZoO.png', darkBg: true },
-                { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg' },
-                { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg' },
-                { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg' },
-              ].map((client, index) => (
-                <motion.div
-                  key={`row1-${client.name}-${index}`}
-                  whileHover={{ scale: 1.05, y: -4 }}
-                  className={`flex-shrink-0 flex items-center justify-center h-14 w-36 rounded-lg transition-all duration-300 group cursor-pointer overflow-hidden ${
-                    client.darkBg 
-                      ? 'bg-[#111] shadow-md hover:shadow-xl' 
-                      : 'bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300'
-                  }`}
-                >
-                  <img
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    className={`h-8 w-auto max-w-[100px] object-contain transition-all duration-400 ${
-                      client.darkBg 
-                        ? 'brightness-100' 
-                        : 'opacity-60 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
-                    }`}
-                    style={!client.darkBg ? { mixBlendMode: 'darken' } : {}}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Second Row - Scrolling Right */}
-            <motion.div
-              className="flex gap-6"
-              animate={{ x: [-1500, 0] }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 35,
-                  ease: "linear",
-                },
-              }}
-            >
-              {[
-                { name: 'Godrej Properties', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/tecyu7tk_GPL_Logo.jpg' },
-                { name: 'Power Grid', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mfdct1ob_png-clipart-power-grid-corporation-of-india-government-of-india-powergrid-substation-business-government-of-india-text-logo.png' },
-                { name: 'Maruti Suzuki', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mb2fcx1c_Maruti-Suzuki-Logo.png', darkBg: true },
-                { name: 'Tata Motors', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/wsaljijc_Tata-Logo.png', darkBg: true },
-                { name: 'BMW', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/1738xrr6_Logo-bmw-vector-transparent-PNG.png' },
-                { name: 'Godrej Properties', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/tecyu7tk_GPL_Logo.jpg' },
-                { name: 'Power Grid', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mfdct1ob_png-clipart-power-grid-corporation-of-india-government-of-india-powergrid-substation-business-government-of-india-text-logo.png' },
-                { name: 'Maruti Suzuki', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mb2fcx1c_Maruti-Suzuki-Logo.png', darkBg: true },
-                { name: 'Tata Motors', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/wsaljijc_Tata-Logo.png', darkBg: true },
-                { name: 'BMW', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/1738xrr6_Logo-bmw-vector-transparent-PNG.png' },
-              ].map((client, index) => (
-                <motion.div
-                  key={`row2-${client.name}-${index}`}
-                  whileHover={{ scale: 1.05, y: -4 }}
-                  className={`flex-shrink-0 flex items-center justify-center h-14 w-36 rounded-lg transition-all duration-300 group cursor-pointer overflow-hidden ${
-                    client.darkBg 
-                      ? 'bg-[#111] shadow-md hover:shadow-xl' 
-                      : 'bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300'
-                  }`}
-                >
-                  <img
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    className={`h-8 w-auto max-w-[100px] object-contain transition-all duration-400 ${
-                      client.darkBg 
-                        ? 'brightness-100' 
-                        : 'opacity-60 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
-                    }`}
-                    style={!client.darkBg ? { mixBlendMode: 'darken' } : {}}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
+          {/* Logo Grid - Static Display */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+            {[
+              { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png' },
+              { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png' },
+              { name: 'Suncity Projects', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/y8z7tvaa_suncity-projects_uyaYZoO.png' },
+              { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg' },
+              { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg' },
+              { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg' },
+              { name: 'Godrej Properties', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/tecyu7tk_GPL_Logo.jpg' },
+              { name: 'Power Grid', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mfdct1ob_png-clipart-power-grid-corporation-of-india-government-of-india-powergrid-substation-business-government-of-india-text-logo.png' },
+              { name: 'Maruti Suzuki', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mb2fcx1c_Maruti-Suzuki-Logo.png' },
+              { name: 'Tata Motors', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/wsaljijc_Tata-Logo.png' },
+              { name: 'BMW', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/1738xrr6_Logo-bmw-vector-transparent-PNG.png' },
+            ].map((client, index) => (
+              <motion.div
+                key={client.name}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="flex items-center justify-center h-20 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 group cursor-pointer p-4"
+                data-testid={`client-logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <img
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  className="h-12 w-auto max-w-[120px] object-contain transition-all duration-300 group-hover:scale-105"
+                />
+              </motion.div>
+            ))}
           </div>
 
           {/* Stats Bar */}
