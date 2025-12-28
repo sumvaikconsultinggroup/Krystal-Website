@@ -15,14 +15,14 @@ import InteractiveProductShowcase from '../components/common/InteractiveProductS
 // Premium uPVC Window Images
 const windowGalleryImages = {
   designs: [
-    { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80', alt: 'Modern home with large casement windows', caption: 'Casement Windows - Living Room', badge: 'Popular' },
+    { src: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/gszxw0vx_Casement%20Windows%20-%20Living%20Room.png', alt: 'Modern home with large casement windows', caption: 'Casement Windows - Living Room', badge: 'Popular' },
     { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', alt: 'Luxury bedroom with floor to ceiling windows', caption: 'Floor-to-ceiling Fixed Windows' },
     { src: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80', alt: 'Kitchen with sliding windows', caption: 'Sliding Windows - Kitchen' },
     { src: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80', alt: 'Study room with tilt turn windows', caption: 'Tilt & Turn Windows - Study' },
     { src: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80', alt: 'French windows opening to garden', caption: 'French Windows - Garden View' },
-    { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80', alt: 'Bay window seating area', caption: 'Bay Windows - Seating Nook' },
-    { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80', alt: 'Double casement window exterior', caption: 'Double Casement - Exterior' },
-    { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80', alt: 'Bathroom with frosted glass window', caption: 'Fixed Window - Frosted Glass' },
+    { src: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/f547fkwp_Bay%20Windows%20-%20Seating%20.png', alt: 'Bay window seating area', caption: 'Bay Windows - Seating Nook' },
+    { src: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/ck64z057_Double%20Casement%20-%20Exterior.png', alt: 'Double casement window exterior', caption: 'Double Casement - Exterior' },
+    { src: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/ux4hpnrh_Fixed%20Window%20Frosted%20Glass.png', alt: 'Bathroom with frosted glass window', caption: 'Fixed Window - Frosted Glass' },
   ],
   installations: [
     { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80', alt: 'Modern villa exterior with windows', caption: 'Villa Project - Gurgaon' },
