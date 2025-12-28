@@ -482,20 +482,20 @@ export default function HomePage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-items-center"
           >
             {[
-              { name: 'DLF', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/DLF_Logo.svg/200px-DLF_Logo.svg.png' },
-              { name: 'M3M', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/44/M3M_India_Logo.svg/200px-M3M_India_Logo.svg.png' },
-              { name: 'Suncity Projects', logo: 'https://www.suncityprojects.com/images/logo.png' },
-              { name: 'Amity University', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Amity_University_logo.svg/200px-Amity_University_logo.svg.png' },
-              { name: 'KIIT University', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/41/KIIT_University_logo.svg/200px-KIIT_University_logo.svg.png' },
-              { name: 'Delta Group', logo: 'https://www.deltaelectronics.com/images/logo.png' },
-              { name: 'Godrej Properties', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Godrej_Logo.svg/200px-Godrej_Logo.svg.png' },
-              { name: 'Power Grid Corporation', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Power_Grid_Corporation_of_India_Logo.svg/200px-Power_Grid_Corporation_of_India_Logo.svg.png' },
-              { name: 'Suzuki', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Suzuki_logo_2.svg/200px-Suzuki_logo_2.svg.png' },
-              { name: 'Tata Motors', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png' },
-              { name: 'BMW', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/200px-BMW.svg.png' },
+              { name: 'DLF', logo: 'https://logo.clearbit.com/dlf.in' },
+              { name: 'M3M', logo: 'https://logo.clearbit.com/m3mindia.com' },
+              { name: 'Suncity Projects', logo: 'https://logo.clearbit.com/suncityprojects.com' },
+              { name: 'Amity University', logo: 'https://logo.clearbit.com/amity.edu' },
+              { name: 'KIIT University', logo: 'https://logo.clearbit.com/kiit.ac.in' },
+              { name: 'Delta Group', logo: 'https://logo.clearbit.com/deltacorp.in' },
+              { name: 'Godrej Properties', logo: 'https://logo.clearbit.com/godrejproperties.com' },
+              { name: 'Power Grid', logo: 'https://logo.clearbit.com/powergrid.in' },
+              { name: 'Suzuki', logo: 'https://logo.clearbit.com/suzuki.co.in' },
+              { name: 'Tata Motors', logo: 'https://logo.clearbit.com/tatamotors.com' },
+              { name: 'BMW', logo: 'https://logo.clearbit.com/bmw.in' },
             ].map((client, index) => (
               <motion.div
                 key={client.name}
@@ -503,18 +503,21 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                className="flex items-center justify-center p-4 h-20 w-full rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300 group"
                 data-testid={`client-logo-${client.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="max-h-12 md:max-h-14 w-auto object-contain"
+                  className="max-h-10 md:max-h-12 w-auto object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-300"
                   onError={(e) => {
                     e.target.style.display = 'none';
-                    e.target.parentNode.innerHTML = `<span class="text-lg font-semibold text-gray-600">${client.name}</span>`;
+                    e.target.nextSibling.style.display = 'block';
                   }}
                 />
+                <span className="hidden text-sm md:text-base font-semibold text-gray-500 group-hover:text-gray-700 transition-colors">
+                  {client.name}
+                </span>
               </motion.div>
             ))}
           </motion.div>
