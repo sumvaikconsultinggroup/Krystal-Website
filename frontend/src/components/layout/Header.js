@@ -142,12 +142,12 @@ export default function Header() {
         {/* Main Navigation */}
         <div className="container">
           <nav className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
+            {/* Logo - Made larger for better visibility */}
             <Link to="/" className="flex-shrink-0" data-testid="header-logo">
               <img
                 src={LOGO_URL}
                 alt="Krystal - uPVC Doors & Windows"
-                className="h-12 lg:h-14 w-auto"
+                className="h-14 sm:h-16 lg:h-20 w-auto"
               />
             </Link>
 
