@@ -4,7 +4,7 @@ from datetime import datetime
 import json
 
 class KrystalAPITester:
-    def __init__(self, base_url="https://upvc-elegance.preview.emergentagent.com/api"):
+    def __init__(self, base_url="https://arch-windows.preview.emergentagent.com/api"):
         self.base_url = base_url
         self.tests_run = 0
         self.tests_passed = 0
@@ -259,7 +259,7 @@ def main():
     print("="*60)
     print("KRYSTAL MAGIC WORLD - API TESTING")
     print("="*60)
-    print(f"Base URL: https://upvc-elegance.preview.emergentagent.com/api")
+    print(f"Base URL: https://arch-windows.preview.emergentagent.com/api")
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     tester = KrystalAPITester()
