@@ -35,14 +35,14 @@ export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-white" data-testid="site-footer">
       {/* Main Footer - Two Row Layout */}
-      <div className="container py-8">
+      <div className="container pt-6 pb-6">
         {/* Top Row - Large Logo Centered */}
-        <div className="flex flex-col items-center text-center mb-8 pb-6 border-b border-white/10">
-          <Link to="/" className="inline-block mb-[22px]">
+        <div className="flex flex-col items-center text-center mb-6 pb-6 border-b border-white/10">
+          <Link to="/" className="inline-block" style={{ marginBottom: '22px' }}>
             <img 
               src={LOGO_URL} 
               alt="Krystal - uPVC Doors & Windows" 
-              className="h-56 md:h-64 lg:h-72 w-auto brightness-0 invert"
+              className="h-48 md:h-56 lg:h-64 w-auto brightness-0 invert"
               loading="lazy"
             />
           </Link>
