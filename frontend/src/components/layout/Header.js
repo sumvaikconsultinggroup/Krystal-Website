@@ -298,10 +298,9 @@ export default function Header() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 py-2 text-[hsl(var(--accent))]"
                   >
-                      <MessageCircle className="w-5 h-5" />
-                      WhatsApp Us
-                    </a>
-                  </div>
+                    <MessageCircle className="w-5 h-5" />
+                    WhatsApp Us
+                  </a>
                 </div>
               </SheetContent>
             </Sheet>
