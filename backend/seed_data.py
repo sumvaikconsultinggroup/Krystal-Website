@@ -474,7 +474,7 @@ Contact us if you notice:
 Proper maintenance protects your investment and ensures continued performance.""",
         category="maintenance",
         tags=["maintenance", "cleaning", "care guide", "longevity"],
-        hero_image=IMAGES["hardware_1"],
+        hero_image="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/785jsiwm_Maintenance.jpeg",
         read_time=4
     ),
 ]
