@@ -142,12 +142,12 @@ export default function Header() {
         {/* Main Navigation */}
         <div className="container">
           <nav className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo - Extra large for maximum visibility */}
-            <Link to="/" className="flex-shrink-0" data-testid="header-logo">
+            {/* Logo - 40% larger with overflow hidden to maintain header height */}
+            <Link to="/" className="flex-shrink-0 overflow-hidden h-16 lg:h-20 flex items-center" data-testid="header-logo">
               <img
                 src={LOGO_URL}
                 alt="Krystal - uPVC Doors & Windows"
-                className="h-24 sm:h-28 lg:h-32 w-auto"
+                className="h-36 sm:h-40 lg:h-44 w-auto -my-8"
               />
             </Link>
 
