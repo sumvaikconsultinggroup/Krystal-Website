@@ -61,7 +61,7 @@ export default function ProjectsPage() {
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
+          src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/6s4mqcsj_freepik__create-a-image-of-a-premium-indian-office-located-__15024.png"
           alt="Krystal Projects"
           className="w-full h-full object-cover"
         />
