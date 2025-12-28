@@ -481,46 +481,54 @@ export default function HomePage() {
           {/* Animated Logo Marquee */}
           <div className="relative">
             {/* Gradient Overlays for smooth fade effect */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-gray-50 via-gray-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none" />
             
             {/* First Row - Scrolling Left */}
             <motion.div
-              className="flex gap-6 mb-6"
-              animate={{ x: [0, -1400] }}
+              className="flex gap-8 mb-6"
+              animate={{ x: [0, -1600] }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 35,
                   ease: "linear",
                 },
               }}
             >
               {[
-                { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png', hasBg: false },
-                { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png', hasBg: true },
-                { name: 'Suncity Projects', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/y8z7tvaa_suncity-projects_uyaYZoO.png', hasBg: true },
-                { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg', hasBg: false },
-                { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg', hasBg: false },
-                { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg', hasBg: false },
-                { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png', hasBg: false },
-                { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png', hasBg: true },
-                { name: 'Suncity Projects', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/y8z7tvaa_suncity-projects_uyaYZoO.png', hasBg: true },
-                { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg', hasBg: false },
-                { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg', hasBg: false },
-                { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg', hasBg: false },
+                { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png' },
+                { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png', darkBg: true },
+                { name: 'Suncity Projects', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/y8z7tvaa_suncity-projects_uyaYZoO.png', darkBg: true },
+                { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg' },
+                { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg' },
+                { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg' },
+                { name: 'DLF', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/kh7dw9ro_dlf-vector-logo-11573923316gzukkqawus.png' },
+                { name: 'M3M', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/nxzfgnyx_logo%20%281%29.png', darkBg: true },
+                { name: 'Suncity Projects', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/y8z7tvaa_suncity-projects_uyaYZoO.png', darkBg: true },
+                { name: 'Amity University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/rwnvn87y_amity-university9126%20%281%29.jpg' },
+                { name: 'KIIT University', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/jpontb9c_kisspng-kalinga-institute-of-industrial-technology-entranc-5ae4656eb5c3a0.9424063815249176147445.jpg' },
+                { name: 'Delta Group', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/z5k6h6gf_delta-electronics-logo-delta-air-lines-power-converters-electronics.jpg' },
               ].map((client, index) => (
                 <motion.div
                   key={`row1-${client.name}-${index}`}
-                  whileHover={{ scale: 1.08, y: -8 }}
-                  className={`flex-shrink-0 flex items-center justify-center px-6 py-4 h-20 w-44 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group cursor-pointer ${client.hasBg ? 'bg-gray-900' : 'bg-white'}`}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  className={`flex-shrink-0 flex items-center justify-center h-16 w-40 rounded-lg transition-all duration-300 group cursor-pointer ${
+                    client.darkBg 
+                      ? 'bg-[#1a1a1a] shadow-md hover:shadow-xl' 
+                      : 'bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300'
+                  }`}
                 >
                   <img
                     src={client.logo}
                     alt={`${client.name} logo`}
-                    className={`max-h-12 max-w-[120px] w-auto object-contain transition-all duration-500 ${client.hasBg ? 'opacity-90 group-hover:opacity-100' : 'filter grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100'}`}
-                    style={!client.hasBg ? { mixBlendMode: 'multiply' } : {}}
+                    className={`h-10 w-auto max-w-[120px] object-contain transition-all duration-400 ${
+                      client.darkBg 
+                        ? 'opacity-90 group-hover:opacity-100' 
+                        : 'opacity-70 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
+                    }`}
+                    style={!client.darkBg ? { mixBlendMode: 'multiply' } : {}}
                   />
                 </motion.div>
               ))}
@@ -528,49 +536,48 @@ export default function HomePage() {
 
             {/* Second Row - Scrolling Right */}
             <motion.div
-              className="flex gap-6"
-              animate={{ x: [-1400, 0] }}
+              className="flex gap-8"
+              animate={{ x: [-1600, 0] }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 35,
                   ease: "linear",
                 },
               }}
             >
               {[
-                { name: 'Power Grid', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mfdct1ob_png-clipart-power-grid-corporation-of-india-government-of-india-powergrid-substation-business-government-of-india-text-logo.png', hasBg: false },
-                { name: 'Maruti Suzuki', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mb2fcx1c_Maruti-Suzuki-Logo.png', hasBg: true },
-                { name: 'Tata Motors', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/wsaljijc_Tata-Logo.png', hasBg: true },
-                { name: 'BMW', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/1738xrr6_Logo-bmw-vector-transparent-PNG.png', hasBg: false },
-                { name: 'Godrej Properties', logo: null, text: 'GODREJ', color: '#5a2d82', hasBg: false },
-                { name: 'Power Grid', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mfdct1ob_png-clipart-power-grid-corporation-of-india-government-of-india-powergrid-substation-business-government-of-india-text-logo.png', hasBg: false },
-                { name: 'Maruti Suzuki', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mb2fcx1c_Maruti-Suzuki-Logo.png', hasBg: true },
-                { name: 'Tata Motors', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/wsaljijc_Tata-Logo.png', hasBg: true },
-                { name: 'BMW', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/1738xrr6_Logo-bmw-vector-transparent-PNG.png', hasBg: false },
-                { name: 'Godrej Properties', logo: null, text: 'GODREJ', color: '#5a2d82', hasBg: false },
+                { name: 'Godrej Properties', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/tecyu7tk_GPL_Logo.jpg' },
+                { name: 'Power Grid', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mfdct1ob_png-clipart-power-grid-corporation-of-india-government-of-india-powergrid-substation-business-government-of-india-text-logo.png' },
+                { name: 'Maruti Suzuki', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mb2fcx1c_Maruti-Suzuki-Logo.png', darkBg: true },
+                { name: 'Tata Motors', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/wsaljijc_Tata-Logo.png', darkBg: true },
+                { name: 'BMW', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/1738xrr6_Logo-bmw-vector-transparent-PNG.png' },
+                { name: 'Godrej Properties', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/tecyu7tk_GPL_Logo.jpg' },
+                { name: 'Power Grid', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mfdct1ob_png-clipart-power-grid-corporation-of-india-government-of-india-powergrid-substation-business-government-of-india-text-logo.png' },
+                { name: 'Maruti Suzuki', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/mb2fcx1c_Maruti-Suzuki-Logo.png', darkBg: true },
+                { name: 'Tata Motors', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/wsaljijc_Tata-Logo.png', darkBg: true },
+                { name: 'BMW', logo: 'https://customer-assets.emergentagent.com/job_arch-windows/artifacts/1738xrr6_Logo-bmw-vector-transparent-PNG.png' },
               ].map((client, index) => (
                 <motion.div
                   key={`row2-${client.name}-${index}`}
-                  whileHover={{ scale: 1.08, y: -8 }}
-                  className={`flex-shrink-0 flex items-center justify-center px-6 py-4 h-20 w-44 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group cursor-pointer ${client.hasBg ? 'bg-gray-900' : 'bg-white'}`}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  className={`flex-shrink-0 flex items-center justify-center h-16 w-40 rounded-lg transition-all duration-300 group cursor-pointer ${
+                    client.darkBg 
+                      ? 'bg-[#1a1a1a] shadow-md hover:shadow-xl' 
+                      : 'bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300'
+                  }`}
                 >
-                  {client.logo ? (
-                    <img
-                      src={client.logo}
-                      alt={`${client.name} logo`}
-                      className={`max-h-12 max-w-[120px] w-auto object-contain transition-all duration-500 ${client.hasBg ? 'opacity-90 group-hover:opacity-100' : 'filter grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100'}`}
-                      style={!client.hasBg ? { mixBlendMode: 'multiply' } : {}}
-                    />
-                  ) : (
-                    <span 
-                      className="text-lg font-bold tracking-widest opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ color: client.color }}
-                    >
-                      {client.text}
-                    </span>
-                  )}
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className={`h-10 w-auto max-w-[120px] object-contain transition-all duration-400 ${
+                      client.darkBg 
+                        ? 'opacity-90 group-hover:opacity-100' 
+                        : 'opacity-70 group-hover:opacity-100 filter grayscale group-hover:grayscale-0'
+                    }`}
+                    style={!client.darkBg ? { mixBlendMode: 'multiply' } : {}}
+                  />
                 </motion.div>
               ))}
             </motion.div>
@@ -582,24 +589,24 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="mt-12 pt-8 border-t border-gray-200"
+            className="mt-14 pt-10 border-t border-gray-200"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <motion.div whileHover={{ scale: 1.05 }} className="cursor-default">
-                <div className="text-3xl font-bold text-[hsl(var(--accent))]">50+</div>
-                <div className="text-sm text-muted-foreground">Corporate Clients</div>
+                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent))]">50+</div>
+                <div className="text-sm text-muted-foreground mt-1">Corporate Clients</div>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} className="cursor-default">
-                <div className="text-3xl font-bold text-[hsl(var(--accent))]">100+</div>
-                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent))]">100+</div>
+                <div className="text-sm text-muted-foreground mt-1">Projects Delivered</div>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} className="cursor-default">
-                <div className="text-3xl font-bold text-[hsl(var(--accent))]">15+</div>
-                <div className="text-sm text-muted-foreground">Years Partnership</div>
+                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent))]">15+</div>
+                <div className="text-sm text-muted-foreground mt-1">Years Partnership</div>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} className="cursor-default">
-                <div className="text-3xl font-bold text-[hsl(var(--accent))]">98%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent))]">98%</div>
+                <div className="text-sm text-muted-foreground mt-1">Client Satisfaction</div>
               </motion.div>
             </div>
           </motion.div>
