@@ -199,19 +199,21 @@ export default function Header() {
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px]">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-8">
-                    <img src={LOGO_URL} alt="Krystal" className="h-10" />
-                  </div>
-                  
-                  <nav className="flex-1 space-y-6">
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0 flex flex-col">
+                {/* Fixed Header with Logo */}
+                <div className="flex items-center justify-between p-6 pb-4 border-b border-border flex-shrink-0">
+                  <img src={LOGO_URL} alt="Krystal" className="h-14 w-auto" />
+                </div>
+                
+                {/* Scrollable Navigation */}
+                <div className="flex-1 overflow-y-auto overflow-x-hidden px-6 py-4">
+                  <nav className="space-y-6">
                     <div>
                       <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Company</h3>
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {navigation.company.map((item) => (
                           <li key={item.href}>
-                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))]">
+                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))] block py-1">
                               {item.name}
                             </Link>
                           </li>
@@ -221,10 +223,10 @@ export default function Header() {
                     
                     <div>
                       <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Windows</h3>
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {navigation.windows.map((item) => (
                           <li key={item.href}>
-                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))]">
+                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))] block py-1">
                               {item.name}
                             </Link>
                           </li>
@@ -234,10 +236,10 @@ export default function Header() {
                     
                     <div>
                       <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Doors</h3>
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {navigation.doors.map((item) => (
                           <li key={item.href}>
-                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))]">
+                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))] block py-1">
                               {item.name}
                             </Link>
                           </li>
@@ -247,37 +249,55 @@ export default function Header() {
                     
                     <div>
                       <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Resources</h3>
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {navigation.resources.map((item) => (
                           <li key={item.href}>
-                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))]">
+                            <Link to={item.href} className="text-foreground hover:text-[hsl(var(--accent))] block py-1">
                               {item.name}
                             </Link>
                           </li>
                         ))}
                       </ul>
                     </div>
+                    
+                    <div>
+                      <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Quick Links</h3>
+                      <ul className="space-y-3">
+                        <li>
+                          <Link to="/design-studio" className="text-foreground hover:text-[hsl(var(--accent))] block py-1">
+                            Design Studio
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/contact" className="text-foreground hover:text-[hsl(var(--accent))] block py-1">
+                            Contact Us
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
                   </nav>
-                  
-                  <div className="pt-6 border-t border-border space-y-3">
-                    <Button
-                      className="w-full"
-                      onClick={() => {
-                        setMobileOpen(false);
-                        setQuoteModalOpen(true);
-                      }}
-                    >
-                      Get Quote
-                    </Button>
-                    <Button className="w-full btn-accent" asChild>
-                      <Link to="/contact">Book Site Visit</Link>
-                    </Button>
-                    <a
-                      href="https://wa.me/919599614440"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 py-2 text-[hsl(var(--accent))]"
-                    >
+                </div>
+                
+                {/* Fixed Footer with CTAs */}
+                <div className="p-6 pt-4 border-t border-border space-y-3 flex-shrink-0 bg-white">
+                  <Button
+                    className="w-full"
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setQuoteModalOpen(true);
+                    }}
+                  >
+                    Get Quote
+                  </Button>
+                  <Button className="w-full btn-accent" asChild>
+                    <Link to="/contact">Book Site Visit</Link>
+                  </Button>
+                  <a
+                    href="https://wa.me/919599614440"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-2 text-[hsl(var(--accent))]"
+                  >
                       <MessageCircle className="w-5 h-5" />
                       WhatsApp Us
                     </a>
