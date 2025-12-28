@@ -73,14 +73,13 @@ export default function ProductsDoorsPage() {
       </Helmet>
 
       {/* Hero Section with Video */}
-      <section className="relative h-[55vh] min-h-[450px] overflow-hidden">
+      <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-black">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          className="absolute inset-0 w-full h-full object-contain"
           poster="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=compress&cs=tinysrgb&w=1920&q=80"
         >
           <source 
@@ -88,7 +87,7 @@ export default function ProductsDoorsPage() {
             type="video/mp4" 
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         <div className="absolute inset-0 flex items-center">
           <div className="container">
             <motion.div
