@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from 'lucide-react';
-import { Separator } from '../ui/separator';
 
 const LOGO_URL = 'https://customer-assets.emergentagent.com/job_luxury-upvc/artifacts/5hyi3l5x_Black%20and%20White%20Minimalist%20Professional%20Initial%20Logo.png';
 
@@ -35,54 +34,57 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1a1a1a] text-white" data-testid="site-footer">
-      {/* Main Footer */}
-      <div className="container section-spacing">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6">
-              <img 
-                src={LOGO_URL} 
-                alt="Krystal - uPVC Doors & Windows" 
-                className="h-72 w-auto brightness-0 invert" 
-              />
-            </Link>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Architectural luxury uPVC doors & windows for Delhi NCR since 2012. 
-              Superior acoustic, thermal & dust protection for discerning homes.
-            </p>
-            <div className="space-y-3">
-              <a
-                href="tel:+919220905087"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
-              >
-                <Phone className="w-4 h-4 text-[hsl(var(--accent))]" />
-                <span>+91 9220905087</span>
-              </a>
-              <a
-                href="mailto:sales@krystalmagicworld.com"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
-              >
-                <Mail className="w-4 h-4 text-[hsl(var(--accent))]" />
-                <span>sales@krystalmagicworld.com</span>
-              </a>
-              <a
-                href="https://wa.me/919599614440"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-300 hover:text-[hsl(var(--accent))] transition-colors"
-                data-testid="footer-whatsapp-link"
-              >
-                <MessageCircle className="w-4 h-4 text-[hsl(var(--accent))]" />
-                <span>WhatsApp Us</span>
-              </a>
-            </div>
+      {/* Main Footer - Two Row Layout */}
+      <div className="container py-12 lg:py-16">
+        {/* Top Row - Large Logo Centered */}
+        <div className="flex flex-col items-center text-center mb-12 pb-10 border-b border-white/10">
+          <Link to="/" className="inline-block mb-6">
+            <img 
+              src={LOGO_URL} 
+              alt="Krystal - uPVC Doors & Windows" 
+              className="h-56 md:h-64 lg:h-72 w-auto brightness-0 invert"
+              loading="lazy"
+            />
+          </Link>
+          <p className="text-gray-400 text-base max-w-2xl leading-relaxed mb-6">
+            Architectural luxury uPVC doors & windows for Delhi NCR since 2012. 
+            Superior acoustic, thermal & dust protection for discerning homes.
+          </p>
+          {/* Contact Info Row */}
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            <a
+              href="tel:+919220905087"
+              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+            >
+              <Phone className="w-5 h-5 text-[hsl(var(--accent))]" />
+              <span>+91 9220905087</span>
+            </a>
+            <a
+              href="mailto:sales@krystalmagicworld.com"
+              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+            >
+              <Mail className="w-5 h-5 text-[hsl(var(--accent))]" />
+              <span>sales@krystalmagicworld.com</span>
+            </a>
+            <a
+              href="https://wa.me/919599614440"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-300 hover:text-[hsl(var(--accent))] transition-colors"
+              data-testid="footer-whatsapp-link"
+            >
+              <MessageCircle className="w-5 h-5 text-[hsl(var(--accent))]" />
+              <span>WhatsApp Us</span>
+            </a>
           </div>
+        </div>
 
+        {/* Bottom Row - Links Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Products Column */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Products</h3>
-            <ul className="space-y-3" data-testid="footer-products-links">
+            <h3 className="font-semibold text-white text-lg mb-4">Products</h3>
+            <ul className="space-y-2.5" data-testid="footer-products-links">
               {footerLinks.products.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -98,8 +100,8 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
-            <ul className="space-y-3" data-testid="footer-company-links">
+            <h3 className="font-semibold text-white text-lg mb-4">Company</h3>
+            <ul className="space-y-2.5" data-testid="footer-company-links">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -115,8 +117,8 @@ export default function Footer() {
 
           {/* Service Areas Column */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Service Areas</h3>
-            <ul className="space-y-3" data-testid="footer-service-links">
+            <h3 className="font-semibold text-white text-lg mb-4">Service Areas</h3>
+            <ul className="space-y-2.5" data-testid="footer-service-links">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -128,16 +130,17 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            
-            <div className="mt-6 p-4 bg-white/5 rounded-lg">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[hsl(var(--accent))] flex-shrink-0 mt-0.5" />
-                <div className="text-sm text-gray-400">
-                  <p className="text-white font-medium mb-1">Head Office</p>
-                  <p>403, 4th Floor, Greenwood Plaza,</p>
-                  <p>Sector-45, Near HSBC Building,</p>
-                  <p>Gurgaon - 122003 (Haryana)</p>
-                </div>
+          </div>
+
+          {/* Office Address Column */}
+          <div>
+            <h3 className="font-semibold text-white text-lg mb-4">Head Office</h3>
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-[hsl(var(--accent))] flex-shrink-0 mt-0.5" />
+              <div className="text-sm text-gray-400 leading-relaxed">
+                <p>403, 4th Floor, Greenwood Plaza,</p>
+                <p>Sector-45, Near HSBC Building,</p>
+                <p>Gurgaon - 122003 (Haryana)</p>
               </div>
             </div>
           </div>
@@ -146,29 +149,27 @@ export default function Footer() {
 
       {/* CTA Strip */}
       <div className="bg-[hsl(var(--accent))]">
-        <div className="container py-6">
+        <div className="container py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold text-white">Ready to transform your space?</h3>
               <p className="text-white/80 text-sm">Get a free consultation and quote today.</p>
             </div>
-            <div className="flex items-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[hsl(var(--accent))] font-medium rounded-md hover:bg-white/90 transition-colors"
-                data-testid="footer-cta-button"
-              >
-                Get Started
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[hsl(var(--accent))] font-medium rounded-md hover:bg-white/90 transition-colors"
+              data-testid="footer-cta-button"
+            >
+              Get Started
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container py-6">
+        <div className="container py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
             <p>© {currentYear} Krystal Magic World. All rights reserved.</p>
             <div className="flex items-center gap-6">
