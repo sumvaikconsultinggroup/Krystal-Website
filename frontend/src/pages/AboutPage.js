@@ -14,7 +14,7 @@ import { getBreadcrumbSchema } from '../lib/seo';
 
 const ABOUT_HERO = 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/hhqekiye_freepik__create-a-image-of-a-premium-luxury-glass-villa-sho__15015.jpeg';
 const FACTORY_IMAGE = 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/0eoke1yt_freepik__create-a-image-of-a-premium-upvc-doors-and-window-__15023.jpeg';
-const QUALITY_IMAGE = 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=compress&cs=tinysrgb&w=800&q=80';
+const QUALITY_IMAGE = 'https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/w7puciau_freepik__create-a-top-view-image-of-a-upvc-doors-and-window__15025.jpeg';
 
 const stats = [
   { value: '12+', label: 'Years Experience', icon: Award },
