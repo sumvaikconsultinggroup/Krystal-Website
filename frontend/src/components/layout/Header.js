@@ -147,7 +147,8 @@ export default function Header() {
               <img
                 src={LOGO_URL}
                 alt="Krystal - uPVC Doors & Windows"
-                className="h-36 sm:h-40 lg:h-44 w-auto -my-8"
+                className="h-52 sm:h-56 lg:h-64 w-auto"
+                style={{ marginTop: '-60px', marginBottom: '-60px' }}
               />
             </Link>
 
