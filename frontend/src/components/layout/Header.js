@@ -199,10 +199,10 @@ export default function Header() {
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0 flex flex-col">
-                {/* Fixed Header with Logo */}
-                <div className="flex items-center justify-between p-6 pb-4 border-b border-border flex-shrink-0">
-                  <img src={LOGO_URL} alt="Krystal" className="h-16 sm:h-20 w-auto" />
+              <SheetContent side="right" className="w-[320px] sm:w-[380px] p-0 flex flex-col h-full">
+                {/* Fixed Header with Larger Logo */}
+                <div className="flex items-center justify-between px-6 py-5 border-b border-border flex-shrink-0">
+                  <img src={LOGO_URL} alt="Krystal" className="h-20 sm:h-24 w-auto" />
                 </div>
                 
                 {/* Scrollable Navigation */}
