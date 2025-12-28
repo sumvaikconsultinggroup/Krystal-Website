@@ -91,7 +91,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Product Gateways */}
+      {/* Product Gateways - Interactive */}
       <section className="section-spacing bg-background">
         <div className="container">
           <motion.div
@@ -107,56 +107,110 @@ export default function HomePage() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Windows Gateway */}
+            {/* Windows Gateway - Interactive */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <Link to="/products/windows" className="group block">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow product-card">
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <img
-                      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=compress&cs=tinysrgb&w=800&q=80"
+                <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 product-card border-0 bg-[#1a1a1a]">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <motion.img
+                      src="https://customer-assets.emergentagent.com/job_upvc-elegance/artifacts/839admza_freepik__image-1-is-logo-and-image-2-is-reference-image-cre__15011.jpeg"
                       alt="uPVC Windows"
-                      className="w-full h-full object-cover product-image"
+                      className="w-full h-full object-contain product-image bg-[#1a1a1a]"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-6 left-6 text-white">
-                      <h3 className="font-serif text-2xl mb-2">uPVC Windows</h3>
-                      <p className="text-white/80 text-sm mb-3">Casement, Sliding, Tilt & Turn, Fixed, French</p>
-                      <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))]">
-                        Explore Windows <ChevronRight className="w-4 h-4 ml-1" />
-                      </span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    
+                    {/* Feature Badges */}
+                    <div className="absolute top-4 right-4 flex flex-col gap-2">
+                      <motion.span 
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="bg-[hsl(var(--accent))]/90 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm"
+                      >
+                        5+ Styles
+                      </motion.span>
+                      <motion.span 
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="bg-white/90 text-gray-800 text-xs px-3 py-1 rounded-full backdrop-blur-sm"
+                      >
+                        50+ Finishes
+                      </motion.span>
+                    </div>
+                    
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="font-serif text-2xl md:text-3xl mb-2">uPVC Windows</h3>
+                      <p className="text-white/80 text-sm mb-4">Casement, Sliding, Tilt & Turn, Fixed, French</p>
+                      <motion.span 
+                        className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-[hsl(var(--accent))] group-hover:text-white transition-all duration-300"
+                        whileHover={{ x: 5 }}
+                      >
+                        Explore Windows <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </motion.span>
                     </div>
                   </div>
                 </Card>
               </Link>
             </motion.div>
 
-            {/* Doors Gateway */}
+            {/* Doors Gateway - Interactive */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <Link to="/products/doors" className="group block">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow product-card">
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <img
+                <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 product-card border-0 bg-[#1a1a1a]">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <motion.img
                       src="https://customer-assets.emergentagent.com/job_luxury-upvc/artifacts/rwhc06k5_freepik__image-1-is-logo-and-image-2-is-reference-image-cre__15010.jpeg"
                       alt="uPVC Doors"
-                      className="w-full h-full object-cover product-image"
+                      className="w-full h-full object-contain product-image bg-[#1a1a1a]"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-6 left-6 text-white">
-                      <h3 className="font-serif text-2xl mb-2">uPVC Doors</h3>
-                      <p className="text-white/80 text-sm mb-3">Sliding, Casement, Bi-fold, Lift & Slide</p>
-                      <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))]">
-                        Explore Doors <ChevronRight className="w-4 h-4 ml-1" />
-                      </span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    
+                    {/* Feature Badges */}
+                    <div className="absolute top-4 right-4 flex flex-col gap-2">
+                      <motion.span 
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="bg-[hsl(var(--accent))]/90 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm"
+                      >
+                        4+ Styles
+                      </motion.span>
+                      <motion.span 
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="bg-white/90 text-gray-800 text-xs px-3 py-1 rounded-full backdrop-blur-sm"
+                      >
+                        Premium Hardware
+                      </motion.span>
+                    </div>
+                    
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="font-serif text-2xl md:text-3xl mb-2">uPVC Doors</h3>
+                      <p className="text-white/80 text-sm mb-4">Sliding, Casement, Bi-fold, Lift & Slide</p>
+                      <motion.span 
+                        className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm group-hover:bg-[hsl(var(--accent))] group-hover:text-white transition-all duration-300"
+                        whileHover={{ x: 5 }}
+                      >
+                        Explore Doors <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </motion.span>
                     </div>
                   </div>
                 </Card>
