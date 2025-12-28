@@ -281,10 +281,68 @@ const PROFILE_SYSTEMS = [
 ];
 
 // ============================================================================
-// COMPONENT: Color Swatch Card
+// COMPONENT: Color Swatch Card - Shows actual uPVC profile colors
 // ============================================================================
 const ColorSwatchCard = ({ color, isSelected, onClick, viewMode }) => {
   const isCompact = viewMode === 'grid';
+  
+  // Generate wood grain SVG pattern for woodgrain finishes
+  const getWoodgrainPattern = (baseColor) => {
+    return `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grain' patternUnits='userSpaceOnUse' width='100' height='20'%3E%3Cpath d='M0 10 Q25 5, 50 10 T100 10' stroke='rgba(0,0,0,0.15)' fill='none' stroke-width='0.8'/%3E%3Cpath d='M0 15 Q30 12, 60 15 T100 15' stroke='rgba(0,0,0,0.1)' fill='none' stroke-width='0.5'/%3E%3Cpath d='M0 5 Q20 2, 40 5 T100 5' stroke='rgba(0,0,0,0.1)' fill='none' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='${encodeURIComponent(baseColor)}'/%3E%3Crect width='100' height='100' fill='url(%23grain)'/%3E%3C/svg%3E")`;
+  };
+
+  // Generate metallic gradient for metallic finishes
+  const getMetallicGradient = (baseColor) => {
+    return `linear-gradient(135deg, ${baseColor} 0%, ${adjustBrightness(baseColor, 30)} 25%, ${baseColor} 50%, ${adjustBrightness(baseColor, -20)} 75%, ${baseColor} 100%)`;
+  };
+
+  // Helper to adjust color brightness
+  const adjustBrightness = (hex, percent) => {
+    const num = parseInt(hex.replace('#', ''), 16);
+    const amt = Math.round(2.55 * percent);
+    const R = (num >> 16) + amt;
+    const G = (num >> 8 & 0x00FF) + amt;
+    const B = (num & 0x0000FF) + amt;
+    return '#' + (0x1000000 + (R < 255 ? R < 0 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 0 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 0 ? 0 : B : 255)).toString(16).slice(1);
+  };
+
+  // Determine background style based on color type
+  const getSwatchStyle = () => {
+    if (color.isWoodgrain) {
+      return {
+        background: getWoodgrainPattern(color.code),
+        backgroundSize: 'cover',
+      };
+    }
+    if (color.isMetallic) {
+      return {
+        background: getMetallicGradient(color.code),
+      };
+    }
+    if (color.secondaryCode) {
+      // Dual color - split diagonally
+      return {
+        background: `linear-gradient(135deg, ${color.code} 50%, ${color.secondaryCode} 50%)`,
+      };
+    }
+    // Solid color
+    return {
+      backgroundColor: color.code,
+    };
+  };
+
+  // Determine if text should be light or dark based on background
+  const isLightColor = (hex) => {
+    const c = hex.replace('#', '');
+    const rgb = parseInt(c, 16);
+    const r = (rgb >> 16) & 0xff;
+    const g = (rgb >> 8) & 0xff;
+    const b = (rgb >> 0) & 0xff;
+    const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    return luma > 128;
+  };
+
+  const needsDarkText = isLightColor(color.code);
   
   return (
     <motion.div
@@ -296,49 +354,96 @@ const ColorSwatchCard = ({ color, isSelected, onClick, viewMode }) => {
       whileTap={{ scale: 0.98 }}
       className={cn(
         "group relative cursor-pointer rounded-lg border-2 overflow-hidden transition-all",
-        isSelected ? "border-[hsl(var(--accent))] shadow-lg" : "border-transparent hover:border-gray-300"
+        isSelected ? "border-[hsl(var(--accent))] shadow-lg ring-2 ring-[hsl(var(--accent))]/20" : "border-gray-200 hover:border-gray-400 hover:shadow-md"
       )}
       onClick={() => onClick(color)}
     >
       <Card className="overflow-hidden border-0 shadow-none">
-        <div className={cn("relative overflow-hidden bg-gray-100", isCompact ? "aspect-square" : "aspect-[4/3]")}>
-          <img
-            src={color.image}
-            alt={color.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          
-          {/* Color preview overlay */}
-          <div 
-            className="absolute bottom-2 left-2 w-8 h-8 rounded-full border-2 border-white shadow-md"
-            style={{ backgroundColor: color.code }}
-          />
-          {color.secondaryCode && (
-            <div 
-              className="absolute bottom-2 left-8 w-8 h-8 rounded-full border-2 border-white shadow-md -ml-2"
-              style={{ backgroundColor: color.secondaryCode }}
-            />
+        {/* Color Swatch Display - Shows actual color */}
+        <div 
+          className={cn(
+            "relative overflow-hidden",
+            isCompact ? "aspect-square" : "aspect-[4/3]"
+          )}
+          style={getSwatchStyle()}
+        >
+          {/* Subtle texture overlay for solid colors */}
+          {!color.isWoodgrain && !color.isMetallic && !color.secondaryCode && (
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)'
+            }} />
           )}
           
+          {/* Border for very light colors */}
+          {needsDarkText && !color.secondaryCode && (
+            <div className="absolute inset-0 border border-gray-200 rounded-t-lg pointer-events-none" />
+          )}
+          
+          {/* uPVC Profile Icon - shows it's a window/door finish */}
+          <div className={cn(
+            "absolute bottom-2 left-2 p-1.5 rounded-md backdrop-blur-sm",
+            needsDarkText ? "bg-black/10" : "bg-white/20"
+          )}>
+            <svg 
+              viewBox="0 0 24 24" 
+              className={cn("w-5 h-5", needsDarkText ? "text-gray-700" : "text-white")}
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="1.5"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="1" />
+              <line x1="12" y1="3" x2="12" y2="21" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <rect x="4" y="4" width="7" height="7" rx="0.5" />
+              <rect x="13" y="4" width="7" height="7" rx="0.5" />
+              <rect x="4" y="13" width="7" height="7" rx="0.5" />
+              <rect x="13" y="13" width="7" height="7" rx="0.5" />
+            </svg>
+          </div>
+          
           {color.popular && (
-            <Badge className="absolute top-2 right-2 bg-[hsl(var(--accent))]">
+            <Badge className="absolute top-2 right-2 bg-[hsl(var(--accent))] text-white shadow-md">
               Popular
             </Badge>
           )}
           
           {isSelected && (
-            <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-[hsl(var(--accent))] flex items-center justify-center">
+            <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-[hsl(var(--accent))] flex items-center justify-center shadow-md">
               <Check className="w-4 h-4 text-white" />
             </div>
           )}
+
+          {/* Hover overlay with view details */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+            <span className={cn(
+              "text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-sm",
+              needsDarkText ? "bg-black/20 text-gray-800" : "bg-white/30 text-white"
+            )}>
+              View Profile
+            </span>
+          </div>
         </div>
-        <CardContent className={cn("p-3", isCompact && "p-2")}>
-          <p className={cn("font-medium truncate", isCompact ? "text-xs" : "text-sm")}>{color.name}</p>
-          {!isCompact && (
-            <p className="text-xs text-muted-foreground mt-1 capitalize">{color.category.replace('_', ' ')}</p>
-          )}
+
+        <CardContent className={cn("p-3 bg-white", isCompact && "p-2")}>
+          <p className={cn("font-medium truncate text-gray-900", isCompact ? "text-xs" : "text-sm")}>{color.name}</p>
+          <div className="flex items-center justify-between mt-1">
+            <p className={cn("text-muted-foreground capitalize", isCompact ? "text-[10px]" : "text-xs")}>
+              {color.category === 'woodgrain' ? 'Wood Grain' : color.category === 'dual' ? 'Dual Color' : color.category}
+            </p>
+            {/* Small color preview circle */}
+            <div className="flex -space-x-1">
+              <div 
+                className="w-4 h-4 rounded-full border border-gray-300 shadow-sm"
+                style={{ backgroundColor: color.code }}
+              />
+              {color.secondaryCode && (
+                <div 
+                  className="w-4 h-4 rounded-full border border-gray-300 shadow-sm"
+                  style={{ backgroundColor: color.secondaryCode }}
+                />
+              )}
+            </div>
+          </div>
         </CardContent>
       </Card>
     </motion.div>
