@@ -772,7 +772,8 @@ const GlassOptionCard = ({ glass, onSelect }) => {
       </Dialog>
     </CardContent>
   </Card>
-);
+  );
+};
 
 // ============================================================================
 // COMPONENT: Hardware Card
