@@ -380,7 +380,7 @@ export default function HomePage() {
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {projects.map((project, index) => (
+              {projects?.map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
