@@ -99,9 +99,9 @@ export default function ProjectsPage() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Cities</SelectItem>
-                {Array.isArray(cities) ? cities.map(city => (
+                {Array.isArray(cities) && cities.map(city => (
                   <SelectItem key={city.id} value={city.name}>{city.name}</SelectItem>
-                )) : null}
+                ))}
               </SelectContent>
             </Select>
 
@@ -153,7 +153,7 @@ export default function ProjectsPage() {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProjects.map((project, index) => (
+              {Array.isArray(filteredProjects) && filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}

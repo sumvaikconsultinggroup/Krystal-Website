@@ -107,27 +107,30 @@ export const getProductSchema = (product) => ({
 export const getFAQSchema = (faqs) => ({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map(faq => ({
+  mainEntity: Array.isArray(faqs) ? faqs.map(faq => ({
     '@type': 'Question',
     name: faq.question,
     acceptedAnswer: {
       '@type': 'Answer',
       text: faq.answer
     }
-  }))
+  })) : []
 });
 
 // Breadcrumb Schema
-export const getBreadcrumbSchema = (items) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: items.map((item, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    name: item.name,
-    item: item.url ? `${SITE_CONFIG.url}${item.url}` : undefined
-  }))
-});
+export const getBreadcrumbSchema = (items) => {
+  console.log('getBreadcrumbSchema called with:', items);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: Array.isArray(items) ? items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url ? `${SITE_CONFIG.url}${item.url}` : undefined
+    })) : []
+  };
+};
 
 // Article Schema (for blog posts)
 export const getArticleSchema = (post) => ({

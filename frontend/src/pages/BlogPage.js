@@ -32,10 +32,10 @@ export default function BlogPage() {
     { name: 'Blog', url: '/blog' },
   ];
 
-  const categories = ['all', ...new Set(posts.map(p => p.category))];
-  const filteredPosts = selectedCategory === 'all' 
-    ? posts 
-    : posts.filter(p => p.category === selectedCategory);
+  const categories = ['all', ...(Array.isArray(posts) ? [...new Set(posts.map(p => p.category))] : [])];
+  const filteredPosts = selectedCategory === 'all'
+    ? posts
+    : (Array.isArray(posts) ? posts.filter(p => p.category === selectedCategory) : []);
 
   return (
     <>

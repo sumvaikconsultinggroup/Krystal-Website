@@ -153,7 +153,7 @@ export default function ServiceAreaPage({ type }) {
                 to extreme weather, our uPVC solutions are designed to deliver comfort and peace of mind.
               </p>
               <ul className="space-y-3">
-                {benefits.map((benefit) => (
+                {Array.isArray(benefits) && benefits.map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-[hsl(var(--accent))]" />
                     <span>{benefit}</span>
@@ -208,7 +208,7 @@ export default function ServiceAreaPage({ type }) {
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {products.map((product, index) => (
+              {Array.isArray(products) && products.map((product, index) => (
                 <motion.div
                   key={product.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -254,7 +254,7 @@ export default function ServiceAreaPage({ type }) {
           <div className="container">
             <h2 className="font-serif text-3xl mb-8">Our Work in {cityData.name}</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cityData.projects.map((project) => (
+              {Array.isArray(cityData.projects) && cityData.projects.map((project) => (
                 <Link key={project.id} to={`/projects/${project.slug}`} className="group block">
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="aspect-[4/3] overflow-hidden">
@@ -282,7 +282,7 @@ export default function ServiceAreaPage({ type }) {
           <div className="container">
             <h2 className="font-serif text-3xl mb-8 text-center">What Our {cityData.name} Clients Say</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {cityData.testimonials.map((testimonial) => (
+              {Array.isArray(cityData.testimonials) && cityData.testimonials.map((testimonial) => (
                 <Card key={testimonial.id} className="p-6">
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -310,7 +310,7 @@ export default function ServiceAreaPage({ type }) {
                 FAQs About uPVC {productLabel} in {cityData.name}
               </h2>
               <Accordion type="single" collapsible className="w-full">
-                {cityData.faqs.map((faq, index) => (
+                {Array.isArray(cityData.faqs) && cityData.faqs.map((faq, index) => (
                   <AccordionItem key={faq.id} value={`item-${index}`}>
                     <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">

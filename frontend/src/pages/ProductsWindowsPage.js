@@ -263,7 +263,7 @@ export default function ProductsWindowsPage() {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.map((product, index) => (
+              {Array.isArray(products) && products.map((product, index) => (
                 <motion.div
                   key={product.id}
                   initial={{ opacity: 0, y: 20 }}
