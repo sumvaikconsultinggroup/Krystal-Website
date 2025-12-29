@@ -99,9 +99,9 @@ export default function ProjectsPage() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Cities</SelectItem>
-                {cities.map(city => (
+                {Array.isArray(cities) ? cities.map(city => (
                   <SelectItem key={city.id} value={city.name}>{city.name}</SelectItem>
-                ))}
+                )) : null}
               </SelectContent>
             </Select>
 
