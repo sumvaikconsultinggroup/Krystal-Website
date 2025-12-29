@@ -42,10 +42,10 @@ export default function HomePage() {
           getTestimonials({ featured: true }),
           getFAQs({ featured: true })
         ]);
-        setProducts(productsData.slice(0, 6));
-        setProjects(projectsData.slice(0, 3));
-        setTestimonials(testimonialsData.slice(0, 4));
-        setFaqs(faqsData.slice(0, 5));
+        setProducts(Array.isArray(productsData) ? productsData.slice(0, 6) : []);
+        setProjects(Array.isArray(projectsData) ? projectsData.slice(0, 3) : []);
+        setTestimonials(Array.isArray(testimonialsData) ? testimonialsData.slice(0, 4) : []);
+        setFaqs(Array.isArray(faqsData) ? faqsData.slice(0, 5) : []);
       } catch (error) {
         console.error('Failed to fetch data:', error);
       }
