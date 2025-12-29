@@ -34,15 +34,15 @@ export default function FAQsPage() {
     { name: 'FAQs', url: '/faqs' },
   ];
 
-  const categories = ['all', ...new Set(faqs.map(f => f.category))];
+  const categories = Array.isArray(faqs) ? ['all', ...new Set(faqs.map(f => f.category))] : ['all'];
 
-  const filteredFAQs = faqs.filter(faq => {
-    const matchesSearch = searchQuery === '' || 
+  const filteredFAQs = Array.isArray(faqs) ? faqs.filter(faq => {
+    const matchesSearch = searchQuery === '' ||
       faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || faq.category === selectedCategory;
     return matchesSearch && matchesCategory;
-  });
+  }) : [];
 
   return (
     <>

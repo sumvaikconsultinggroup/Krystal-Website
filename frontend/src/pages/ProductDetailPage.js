@@ -71,7 +71,7 @@ export default function ProductDetailPage() {
     { name: product.name },
   ];
 
-  const allImages = [product.hero_image, ...product.gallery.filter(img => img !== product.hero_image)];
+  const allImages = [product.hero_image, ...(Array.isArray(product.gallery) ? product.gallery.filter(img => img !== product.hero_image) : [])];
 
   return (
     <>
@@ -156,12 +156,12 @@ export default function ProductDetailPage() {
               <div className="mb-8">
                 <h3 className="font-semibold mb-3">Key Benefits</h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {product.benefits.map((benefit) => (
+                  {Array.isArray(product.benefits) ? product.benefits.map((benefit) => (
                     <li key={benefit} className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[hsl(var(--accent))]" />
                       <span className="text-sm">{benefit}</span>
                     </li>
-                  ))}
+                  )) : null}
                 </ul>
               </div>
 
@@ -169,11 +169,11 @@ export default function ProductDetailPage() {
               <div className="mb-8">
                 <h3 className="font-semibold mb-3">Ideal For</h3>
                 <div className="flex flex-wrap gap-2">
-                  {product.use_cases.map((useCase) => (
+                  {Array.isArray(product.use_cases) ? product.use_cases.map((useCase) => (
                     <span key={useCase} className="px-3 py-1 bg-secondary text-sm rounded-full">
                       {useCase}
                     </span>
-                  ))}
+                  )) : null}
                 </div>
               </div>
 
@@ -222,12 +222,12 @@ export default function ProductDetailPage() {
               <Card className="p-6">
                 <h3 className="font-serif text-2xl mb-6">Features & Highlights</h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {product.features.map((feature, index) => (
+                  {Array.isArray(product.features) ? product.features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3 p-4 bg-background rounded-lg">
                       <Check className="w-5 h-5 text-[hsl(var(--accent))] mt-0.5" />
                       <span>{feature}</span>
                     </div>
-                  ))}
+                  )) : null}
                 </div>
               </Card>
             </TabsContent>
@@ -243,12 +243,12 @@ export default function ProductDetailPage() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {product.specs.map((spec, index) => (
+                    {Array.isArray(product.specs) ? product.specs.map((spec, index) => (
                       <TableRow key={index}>
                         <TableCell className="font-medium">{spec.label}</TableCell>
                         <TableCell>{spec.value}</TableCell>
                       </TableRow>
-                    ))}
+                    )) : null}
                   </TableBody>
                 </Table>
                 <div className="mt-6">
@@ -265,14 +265,14 @@ export default function ProductDetailPage() {
                 <h3 className="font-serif text-2xl mb-6">Frequently Asked Questions</h3>
                 {faqs.length > 0 ? (
                   <Accordion type="single" collapsible className="w-full">
-                    {faqs.map((faq, index) => (
+                    {Array.isArray(faqs) ? faqs.map((faq, index) => (
                       <AccordionItem key={faq.id} value={`item-${index}`}>
                         <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                         <AccordionContent className="text-muted-foreground">
                           {faq.answer}
                         </AccordionContent>
                       </AccordionItem>
-                    ))}
+                    )) : null}
                   </Accordion>
                 ) : (
                   <p className="text-muted-foreground">No FAQs available for this product.</p>
@@ -289,7 +289,7 @@ export default function ProductDetailPage() {
           <div className="container">
             <h2 className="font-serif text-3xl mb-8">Related Products</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {relatedProducts.map((related) => (
+              {Array.isArray(relatedProducts) ? relatedProducts.map((related) => (
                 <Link key={related.id} to={`/products/${related.slug}`} className="group block">
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="relative aspect-[4/3] overflow-hidden">
@@ -305,7 +305,7 @@ export default function ProductDetailPage() {
                     </CardContent>
                   </Card>
                 </Link>
-              ))}
+              )) : null}
             </div>
           </div>
         </section>
