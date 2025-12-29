@@ -66,7 +66,7 @@ export default function BlogPage() {
       <section className="bg-white border-b border-border py-4">
         <div className="container">
           <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((cat) => (
+            {Array.isArray(categories) && categories.map((cat) => (
               <Button
                 key={cat}
                 variant={selectedCategory === cat ? 'default' : 'ghost'}
@@ -109,7 +109,7 @@ export default function BlogPage() {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredPosts.map((post, index) => (
+              {Array.isArray(filteredPosts) && filteredPosts.map((post, index) => (
                 <motion.div
                   key={post.id}
                   initial={{ opacity: 0, y: 20 }}
