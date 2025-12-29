@@ -41,13 +41,13 @@ export default function ProjectsPage() {
     { name: 'Projects', url: '/projects' },
   ];
 
-  const filteredProjects = projects.filter(project => {
+  const filteredProjects = Array.isArray(projects) ? projects.filter(project => {
     if (filters.city !== 'all' && project.city !== filters.city) return false;
     if (filters.projectType !== 'all' && project.project_type !== filters.projectType) return false;
     return true;
-  });
+  }) : [];
 
-  const projectTypes = [...new Set(projects.map(p => p.project_type))];
+  const projectTypes = Array.isArray(projects) ? [...new Set(projects.map(p => p.project_type))] : [];
 
   return (
     <>
