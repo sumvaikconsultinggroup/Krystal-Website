@@ -61,7 +61,7 @@ export default function HomePage() {
         <link rel="canonical" href="https://krystalmagicworld.com" />
         <script type="application/ld+json">{JSON.stringify(getOrganizationSchema())}</script>
         <script type="application/ld+json">{JSON.stringify(getLocalBusinessSchema())}</script>
-        {faqs.length > 0 && <script type="application/ld+json">{JSON.stringify(getFAQSchema(faqs))}</script>}
+        
       </Helmet>
 
       {/* Animated Hero Section */}
