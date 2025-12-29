@@ -25,7 +25,7 @@ export default function ServiceAreaPage({ type }) {
           getProducts({ category: type === 'windows' ? 'windows' : 'doors', featured: true })
         ]);
         setCityData(cityInfo);
-        setProducts(productsData.slice(0, 4));
+        setProducts(Array.isArray(productsData) ? productsData.slice(0, 4) : []);
       } catch (error) {
         console.error('Failed to fetch city data:', error);
       } finally {

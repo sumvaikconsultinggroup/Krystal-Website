@@ -39,7 +39,7 @@ export default function ProductsDoorsPage() {
     const fetchProducts = async () => {
       try {
         const data = await getProducts({ category: 'doors' });
-        setProducts(data);
+        setProducts(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error('Failed to fetch products:', error);
       } finally {

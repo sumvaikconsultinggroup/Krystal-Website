@@ -47,7 +47,7 @@ export default function ProductsWindowsPage() {
     const fetchProducts = async () => {
       try {
         const data = await getProducts({ category: 'windows' });
-        setProducts(data);
+        setProducts(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error('Failed to fetch products:', error);
       } finally {
