@@ -29,256 +29,46 @@ import {
 } from '../components/ui/dialog';
 import { getBreadcrumbSchema } from '../lib/seo';
 import { cn } from '../lib/utils';
+import { 
+  COLOR_FINISHES_COMPREHENSIVE, 
+  GLASS_OPTIONS_COMPREHENSIVE, 
+  HARDWARE_COMPREHENSIVE, 
+  PROFILE_SYSTEMS as PROFILE_SYSTEMS_DATA 
+} from '../lib/staticData';
 
 // ============================================================================
-// COMPREHENSIVE COLOR DATA - 40+ Industry Standard Colors
-// Using 'useColorSwatch: true' to render the actual color instead of an image
+// DATA MAPPING
 // ============================================================================
-const COLOR_FINISHES = [
-  // SOLID COLORS
-  { id: 'brilliant-white', name: 'Brilliant White', code: '#FFFFFF', category: 'solid', popular: true, useColorSwatch: true, description: 'Classic pure white - the most popular choice for modern homes' },
-  { id: 'cream-white', name: 'Cream White', code: '#FFFEF0', category: 'solid', useColorSwatch: true, description: 'Soft warm white with subtle cream undertone' },
-  { id: 'ivory', name: 'Ivory', code: '#FFFFF0', category: 'solid', useColorSwatch: true, description: 'Warm off-white shade for traditional architecture' },
-  { id: 'champagne', name: 'Champagne', code: '#F7E7CE', category: 'solid', useColorSwatch: true, description: 'Luxurious champagne gold undertone' },
-  { id: 'anthracite-grey', name: 'Anthracite Grey', code: '#383E42', category: 'solid', popular: true, useColorSwatch: true, description: 'Deep charcoal grey - a modern classic' },
-  { id: 'slate-grey', name: 'Slate Grey', code: '#708090', category: 'solid', useColorSwatch: true, description: 'Medium grey with blue undertone' },
-  { id: 'agate-grey', name: 'Agate Grey', code: '#B5B5B5', category: 'solid', useColorSwatch: true, description: 'Light silver grey, subtle and refined' },
-  { id: 'quartz-grey', name: 'Quartz Grey', code: '#6C6C6C', category: 'solid', useColorSwatch: true, description: 'Neutral mid-grey, versatile for any style' },
-  { id: 'jet-black', name: 'Jet Black', code: '#0A0A0A', category: 'solid', popular: true, useColorSwatch: true, description: 'Premium black finish for bold statements' },
-  { id: 'smooth-black', name: 'Smooth Black', code: '#1C1C1C', category: 'solid', useColorSwatch: true, description: 'Deep black with smooth satin texture' },
-  { id: 'racing-green', name: 'Racing Green', code: '#0B3D0B', category: 'solid', useColorSwatch: true, description: 'Classic British racing green' },
-  { id: 'steel-blue', name: 'Steel Blue', code: '#4682B4', category: 'solid', useColorSwatch: true, description: 'Deep steel blue, coastal inspired' },
-  
-  // WOODGRAIN TEXTURES - These show wood grain pattern preview
-  { id: 'golden-oak', name: 'Golden Oak', code: '#B5651D', category: 'woodgrain', popular: true, useColorSwatch: true, isWoodgrain: true, description: 'Classic golden oak with visible grain pattern' },
-  { id: 'irish-oak', name: 'Irish Oak', code: '#A0522D', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Lighter oak with reddish undertones' },
-  { id: 'natural-oak', name: 'Natural Oak', code: '#C4A76D', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Light natural oak, Scandinavian style' },
-  { id: 'rustic-oak', name: 'Rustic Oak', code: '#8B7355', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Weathered oak with character marks' },
-  { id: 'winchester-oak', name: 'Winchester Oak', code: '#6B4423', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Deep amber oak, rich and traditional' },
-  { id: 'walnut', name: 'Walnut', code: '#5D4037', category: 'woodgrain', popular: true, useColorSwatch: true, isWoodgrain: true, description: 'Dark chocolate walnut, luxurious' },
-  { id: 'dark-walnut', name: 'Dark Walnut', code: '#3E2723', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Extra-dark walnut, dramatic appeal' },
-  { id: 'mahogany', name: 'Mahogany', code: '#4E0000', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Rich red-brown mahogany' },
-  { id: 'rosewood', name: 'Rosewood', code: '#65000B', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Deep rose-tinted exotic wood' },
-  { id: 'cherry', name: 'Cherry', code: '#7B3F00', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Warm cherry wood tones' },
-  { id: 'teak', name: 'Teak', code: '#6E4C1E', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Classic teak, tropical warmth' },
-  { id: 'sheesham', name: 'Sheesham', code: '#8B4513', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Indian rosewood pattern' },
-  { id: 'grey-oak', name: 'Grey Oak', code: '#808069', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Weathered grey oak, contemporary rustic' },
-  { id: 'white-oak', name: 'White Oak', code: '#D2B48C', category: 'woodgrain', useColorSwatch: true, isWoodgrain: true, description: 'Pale blonde oak, Scandinavian feel' },
-  
-  // METALLIC
-  { id: 'brushed-aluminium', name: 'Brushed Aluminium', code: '#A8A9AD', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Industrial brushed metal look' },
-  { id: 'silver-grey', name: 'Silver Grey', code: '#C0C0C0', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Clean silver metallic' },
-  { id: 'bronze', name: 'Bronze', code: '#CD7F32', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Warm bronze metallic' },
-  { id: 'copper', name: 'Copper', code: '#B87333', category: 'metallic', useColorSwatch: true, isMetallic: true, description: 'Antique copper finish' },
-  
-  // DUAL COLOR
-  { id: 'white-grey', name: 'White / Anthracite Grey', code: '#FFFFFF', category: 'dual', popular: true, secondaryCode: '#383E42', useColorSwatch: true, description: 'White interior, Grey exterior' },
-  { id: 'white-oak-dual', name: 'White / Golden Oak', code: '#FFFFFF', category: 'dual', secondaryCode: '#B5651D', useColorSwatch: true, description: 'White interior, Oak exterior' },
-  { id: 'white-black', name: 'White / Jet Black', code: '#FFFFFF', category: 'dual', secondaryCode: '#0A0A0A', useColorSwatch: true, description: 'White interior, Black exterior' },
-];
 
-// ============================================================================
-// GLASS OPTIONS DATA with Full Technical Specs
-// ============================================================================
-const GLASS_OPTIONS = [
-  {
-    id: 'clear-float',
-    name: 'Clear Float Glass',
-    category: 'basic',
-    description: 'Standard transparent glass for maximum light transmission and clear views.',
-    thickness: '4mm / 5mm / 6mm / 8mm',
-    uValue: '5.8 W/m²K',
-    lightTransmission: '89%',
-    soundReduction: '26-30 dB',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-    benefits: ['Maximum natural light', 'Crystal clear views', 'Cost effective'],
-    bestFor: ['Interior partitions', 'Mild climates', 'Budget projects'],
-  },
-  {
-    id: 'dgu-standard',
-    name: 'Double Glazed Unit (DGU)',
-    category: 'insulated',
-    popular: true,
-    description: 'Two panes with air-filled gap. The standard for energy-efficient windows.',
-    thickness: '24mm (4+16+4)',
-    uValue: '2.8 W/m²K',
-    lightTransmission: '81%',
-    soundReduction: '30-35 dB',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
-    benefits: ['50% better insulation', 'Reduced condensation', 'Lower energy bills'],
-    bestFor: ['All residential windows', 'Bedrooms', 'Living areas'],
-  },
-  {
-    id: 'dgu-argon',
-    name: 'Argon-Filled DGU',
-    category: 'insulated',
-    description: 'Double glazed unit with argon gas for enhanced insulation.',
-    thickness: '24mm (4+16+4)',
-    uValue: '2.5 W/m²K',
-    lightTransmission: '81%',
-    soundReduction: '31-36 dB',
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
-    benefits: ['15% better than air-filled DGU', 'Lower U-value', 'Professional grade'],
-    bestFor: ['Premium residences', 'Energy-efficient homes'],
-  },
-  {
-    id: 'low-e',
-    name: 'Low-E Glass',
-    category: 'insulated',
-    popular: true,
-    description: 'Microscopic metallic coating reflects heat while allowing light through.',
-    thickness: 'In DGU: 24mm / 28mm',
-    uValue: '1.1-1.6 W/m²K',
-    lightTransmission: '72-78%',
-    soundReduction: '31-36 dB',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
-    benefits: ['Reflects heat inside in winter', 'Blocks solar heat in summer', '99% UV block'],
-    bestFor: ['All climates', 'Large glazed areas'],
-  },
-  {
-    id: 'triple-glazed',
-    name: 'Triple Glazed Unit',
-    category: 'insulated',
-    description: 'Three panes for ultimate thermal and acoustic performance.',
-    thickness: '36mm (4+10+4+10+4)',
-    uValue: '0.8-1.0 W/m²K',
-    lightTransmission: '68-72%',
-    soundReduction: '38-45 dB',
-    image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80',
-    benefits: ['Maximum insulation', 'Superior noise reduction', 'Condensation-free'],
-    bestFor: ['Cold climates', 'Near airports/highways'],
-  },
-  {
-    id: 'laminated',
-    name: 'Laminated Safety Glass',
-    category: 'safety',
-    popular: true,
-    description: 'Two panes bonded with PVB interlayer. Holds together if broken.',
-    thickness: '6.38mm / 8.38mm / 10.38mm',
-    uValue: '5.6 W/m²K (single)',
-    lightTransmission: '87%',
-    soundReduction: '35-40 dB',
-    image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80',
-    benefits: ['Safety if shattered', 'Burglar resistant', '99% UV blocking'],
-    bestFor: ['Ground floor windows', 'Overhead glazing', 'Schools'],
-  },
-  {
-    id: 'toughened',
-    name: 'Toughened / Tempered Glass',
-    category: 'safety',
-    description: 'Heat-treated glass, 4-5x stronger. Shatters into safe small pieces.',
-    thickness: '5mm / 6mm / 8mm / 10mm',
-    uValue: '5.8 W/m²K (single)',
-    lightTransmission: '89%',
-    soundReduction: '26-30 dB',
-    image: 'https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=800&q=80',
-    benefits: ['4x stronger', 'Safe breakage pattern', 'Scratch resistant'],
-    bestFor: ['Large panes', 'Doors', 'Areas prone to impact'],
-  },
-  {
-    id: 'acoustic',
-    name: 'Acoustic Laminated Glass',
-    category: 'specialty',
-    description: 'Special PVB interlayer optimized for maximum sound dampening.',
-    thickness: '10.8mm / 12.8mm / In DGU',
-    uValue: '5.5 W/m²K (single)',
-    lightTransmission: '86%',
-    soundReduction: '40-47 dB',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-    benefits: ['Maximum noise reduction', 'All safety benefits of laminated'],
-    bestFor: ['Near highways', 'Airport areas', 'Home theaters'],
-  },
-  {
-    id: 'frosted',
-    name: 'Frosted / Obscure Glass',
-    category: 'specialty',
-    description: 'Privacy glass that diffuses light while obscuring views.',
-    thickness: '4mm / 5mm / 6mm',
-    uValue: '5.8 W/m²K (single)',
-    lightTransmission: '85%',
-    soundReduction: '26-30 dB',
-    image: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800&q=80',
-    benefits: ['Privacy without blocking light', 'Soft diffused lighting'],
-    bestFor: ['Bathrooms', 'Front doors', 'Office partitions'],
-  },
-  {
-    id: 'tinted',
-    name: 'Tinted / Solar Control Glass',
-    category: 'specialty',
-    description: 'Color-tinted glass for solar control. Available in bronze, grey, green, blue.',
-    thickness: '4mm / 5mm / 6mm / 8mm',
-    uValue: '5.5 W/m²K (single)',
-    lightTransmission: '45-70%',
-    soundReduction: '27-31 dB',
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80',
-    benefits: ['Reduces solar heat', 'Glare reduction', 'Privacy enhancement'],
-    bestFor: ['West/South facing', 'Commercial buildings'],
-  },
-];
+const COLOR_FINISHES = COLOR_FINISHES_COMPREHENSIVE.map(color => ({
+  ...color,
+  id: color.id.replace('color-', ''),
+  popular: color.is_popular,
+  useColorSwatch: true,
+  isWoodgrain: color.category === 'wood_texture',
+  isMetallic: color.category === 'metallic',
+}));
 
-// ============================================================================
-// HARDWARE DATA
-// ============================================================================
-const HARDWARE_ITEMS = [
-  // Handles
-  { id: 'hoppe-secustic', name: 'Hoppe Secustic Handle', category: 'handles', brand: 'Hoppe', origin: 'Germany', features: ['Anti-jemmy device', '10-year warranty', 'Multiple finishes'], image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  { id: 'roto-swing', name: 'Roto Swing Handle', category: 'handles', brand: 'Roto Frank', origin: 'Germany', features: ['Ergonomic design', 'Child-safe lock option', 'Corrosion resistant'], image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  { id: 'siegenia-favorit', name: 'Siegenia Favorit Handle', category: 'handles', brand: 'Siegenia-Aubi', origin: 'Germany', features: ['TBT safety mechanism', 'Soft-close compatible', 'DIN tested'], image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  
-  // Locks
-  { id: 'gu-multilock', name: 'GU Multi-Point Lock', category: 'locks', brand: 'GU', origin: 'Germany', features: ['3-5 point locking', 'Anti-drill protection', 'Smooth mechanism'], image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80' },
-  { id: 'roto-safe', name: 'Roto Safe Door Lock', category: 'locks', brand: 'Roto Frank', origin: 'Germany', features: ['RC2 certified', 'Mushroom cam bolts', 'Anti-pick cylinder'], image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80' },
-  { id: 'yale-cylinder', name: 'Yale Euro Cylinder', category: 'locks', brand: 'Yale', origin: 'UK', features: ['Anti-snap protection', 'Anti-pick pins', 'Insurance approved'], image: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&q=80' },
-  
-  // Hinges
-  { id: 'roto-nt', name: 'Roto NT Tilt & Turn Hinge', category: 'hinges', brand: 'Roto Frank', origin: 'Germany', features: ['Dual-mode operation', '3-plane adjustable', 'Up to 130kg sash'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'friction-stay', name: 'Premium Friction Stay', category: 'hinges', brand: 'Various', origin: 'UK', features: ['Stainless steel', 'Fire-exit option', '90° opening'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'child-restrictor', name: 'Child Safety Restrictor', category: 'hinges', brand: 'Various', origin: 'UK', features: ['100mm max opening', 'Key override', 'Fire compliant'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  
-  // Sliding
-  { id: 'tandem-roller', name: 'Heavy-Duty Tandem Rollers', category: 'sliding', brand: 'Various', origin: 'Germany', features: ['200kg max weight', 'PTFE coated', 'Adjustable height'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'lift-slide', name: 'Lift & Slide System', category: 'sliding', brand: 'Siegenia', origin: 'Germany', features: ['400kg panel weight', 'Compression seal', 'Premium feel'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  
-  // Accessories
-  { id: 'mesh-fiberglass', name: 'Fiberglass Insect Mesh', category: 'accessories', brand: 'Various', origin: 'India', features: ['18x16 mesh', 'UV resistant', 'Pet-proof option'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'mesh-ss', name: 'SS Security Mesh', category: 'accessories', brand: 'Various', origin: 'Australia', features: ['316 marine grade', 'Cut resistant', 'Fire safe'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'mesh-pleated', name: 'Pleated Retractable Screen', category: 'accessories', brand: 'Various', origin: 'Italy', features: ['Retractable', 'No visible track', 'Custom sizes'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-  { id: 'trickle-vent', name: 'Trickle Ventilator', category: 'accessories', brand: 'Various', origin: 'UK', features: ['5000mm² airflow', 'Acoustic options', 'Weatherproof'], image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80' },
-];
+const GLASS_OPTIONS = GLASS_OPTIONS_COMPREHENSIVE.map(glass => ({
+  ...glass,
+  uValue: glass.u_value,
+  soundReduction: glass.sound_reduction,
+  lightTransmission: glass.light_transmission,
+  bestFor: glass.best_for,
+}));
 
-// ============================================================================
-// PROFILE SYSTEMS DATA
-// ============================================================================
-const PROFILE_SYSTEMS = [
-  {
-    id: '60mm',
-    name: '60mm Classic',
-    chambers: 3,
-    uValue: '1.5',
-    soundClass: '30-35 dB',
-    maxGlass: '28mm',
-    bestFor: 'Budget projects, mild climates',
-  },
-  {
-    id: '70mm',
-    name: '70mm Premium',
-    chambers: 5,
-    uValue: '1.2',
-    soundClass: '35-40 dB',
-    maxGlass: '40mm',
-    bestFor: 'Most residential applications',
-    popular: true,
-  },
-  {
-    id: '82mm',
-    name: '82mm Passive House',
-    chambers: 6,
-    uValue: '0.95',
-    soundClass: '40-45 dB',
-    maxGlass: '52mm',
-    bestFor: 'Passive houses, extreme climates',
-  },
-];
+const HARDWARE_ITEMS = HARDWARE_COMPREHENSIVE.map(item => ({
+  ...item,
+  origin: 'Germany', // Placeholder, as origin is not in the new data
+}));
+
+const PROFILE_SYSTEMS = PROFILE_SYSTEMS_DATA.map(profile => ({
+  ...profile,
+  uValue: profile.u_value,
+  soundClass: profile.sound_class,
+  maxGlass: profile.max_glass,
+  bestFor: profile.best_for,
+}));
 
 // ============================================================================
 // COMPONENT: Color Swatch Card - Shows actual uPVC profile colors
@@ -428,7 +218,7 @@ const ColorSwatchCard = ({ color, isSelected, onClick, viewMode }) => {
           <p className={cn("font-medium truncate text-gray-900", isCompact ? "text-xs" : "text-sm")}>{color.name}</p>
           <div className="flex items-center justify-between mt-1">
             <p className={cn("text-muted-foreground capitalize", isCompact ? "text-[10px]" : "text-xs")}>
-              {color.category === 'woodgrain' ? 'Wood Grain' : color.category === 'dual' ? 'Dual Color' : color.category}
+              {color.category === 'wood_texture' ? 'Wood Grain' : color.category === 'dual' ? 'Dual Color' : color.category}
             </p>
             {/* Small color preview circle */}
             <div className="flex -space-x-1">
@@ -848,7 +638,7 @@ export default function DesignStudioPage() {
   const colorCategories = [
     { id: 'all', label: 'All Colors', count: COLOR_FINISHES.length },
     { id: 'solid', label: 'Solid', count: COLOR_FINISHES.filter(c => c.category === 'solid').length },
-    { id: 'woodgrain', label: 'Woodgrain', count: COLOR_FINISHES.filter(c => c.category === 'woodgrain').length },
+    { id: 'wood_texture', label: 'Woodgrain', count: COLOR_FINISHES.filter(c => c.category === 'wood_texture').length },
     { id: 'metallic', label: 'Metallic', count: COLOR_FINISHES.filter(c => c.category === 'metallic').length },
     { id: 'dual', label: 'Dual Color', count: COLOR_FINISHES.filter(c => c.category === 'dual').length },
   ];

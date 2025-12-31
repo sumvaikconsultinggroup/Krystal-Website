@@ -1,4 +1,17 @@
 import axios from 'axios';
+import {
+  ALL_PRODUCTS,
+  PROJECTS,
+  BLOG_POSTS,
+  FAQS,
+  TESTIMONIALS,
+  CITIES,
+  COLOR_FINISHES,
+  GLASS_OPTIONS,
+  HARDWARE_ITEMS,
+  DOWNLOADS,
+  GLOBAL_SETTINGS,
+} from './seedData';
 
 const API_BASE = process.env.REACT_APP_BACKEND_URL || '';
 
@@ -11,87 +24,124 @@ const api = axios.create({
 
 // Products
 export const getProducts = async (params = {}) => {
-  const response = await api.get('/api/products', { params });
-  return response.data;
+  let products = ALL_PRODUCTS;
+  if (params.category) {
+    products = products.filter(p => p.category === params.category);
+  }
+  if (params.featured) {
+    products = products.filter(p => p.is_featured);
+  }
+  return new Promise(resolve => setTimeout(() => resolve(products), 100));
 };
 
 export const getProduct = async (slug) => {
-  const response = await api.get(`/api/products/${slug}`);
-  return response.data;
+  const product = ALL_PRODUCTS.find(p => p.slug === slug);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (product) {
+        resolve(product);
+      } else {
+        reject(new Error('Product not found'));
+      }
+    }, 100);
+  });
 };
 
 // Projects
 export const getProjects = async (params = {}) => {
-  const response = await api.get('/api/projects', { params });
-  return response.data;
+  let projects = PROJECTS;
+  if (params.featured) {
+    projects = projects.filter(p => p.is_featured);
+  }
+  return new Promise(resolve => setTimeout(() => resolve(projects), 100));
 };
 
 export const getProject = async (slug) => {
-  const response = await api.get(`/api/projects/${slug}`);
-  return response.data;
+  const project = PROJECTS.find(p => p.slug === slug);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (project) {
+        resolve(project);
+      } else {
+        reject(new Error('Project not found'));
+      }
+    }, 100);
+  });
 };
 
 // Blog
 export const getBlogPosts = async (params = {}) => {
-  const response = await api.get('/api/blog', { params });
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(BLOG_POSTS), 100));
 };
 
 export const getBlogPost = async (slug) => {
-  const response = await api.get(`/api/blog/${slug}`);
-  return response.data;
+  const post = BLOG_POSTS.find(p => p.slug === slug);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (post) {
+        resolve(post);
+      } else {
+        reject(new Error('Post not found'));
+      }
+    }, 100);
+  });
 };
 
 // FAQs
 export const getFAQs = async (params = {}) => {
-  const response = await api.get('/api/faqs', { params });
-  return response.data;
+  let faqs = FAQS;
+  if (params.featured) {
+    faqs = faqs.filter(f => f.is_featured);
+  }
+  return new Promise(resolve => setTimeout(() => resolve(faqs), 100));
 };
 
 // Testimonials
 export const getTestimonials = async (params = {}) => {
-  const response = await api.get('/api/testimonials', { params });
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(TESTIMONIALS), 100));
 };
 
 // Cities
 export const getCities = async () => {
-  const response = await api.get('/api/cities');
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(CITIES), 100));
 };
 
 export const getCity = async (slug) => {
-  const response = await api.get(`/api/cities/${slug}`);
-  return response.data;
+  const city = CITIES.find(c => c.slug === slug);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (city) {
+        resolve(city);
+      } else {
+        reject(new Error('City not found'));
+      }
+    }, 100);
+  });
 };
 
 // Design Studio
 export const getColorFinishes = async (params = {}) => {
-  const response = await api.get('/api/design-studio/colors', { params });
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(COLOR_FINISHES), 100));
 };
 
 export const getGlassOptions = async () => {
-  const response = await api.get('/api/design-studio/glass');
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(GLASS_OPTIONS), 100));
 };
 
 export const getHardware = async (params = {}) => {
-  const response = await api.get('/api/design-studio/hardware', { params });
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(HARDWARE_ITEMS), 100));
 };
 
 // Downloads
 export const getDownloads = async (params = {}) => {
-  const response = await api.get('/api/downloads', { params });
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(DOWNLOADS), 100));
 };
 
 // Settings
 export const getSettings = async () => {
-  const response = await api.get('/api/settings');
-  return response.data;
+  return new Promise(resolve => setTimeout(() => resolve(GLOBAL_SETTINGS), 100));
 };
+
 
 // Leads
 export const createLead = async (data) => {

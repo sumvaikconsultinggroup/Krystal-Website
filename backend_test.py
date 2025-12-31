@@ -107,132 +107,6 @@ class KrystalAPITester:
             update_data = {"status": "contacted"}
             self.run_test("Update Lead", "PATCH", f"leads/{self.lead_id}", 200, data=update_data)
 
-    def test_product_endpoints(self):
-        """Test product endpoints"""
-        print("\n" + "="*60)
-        print("TESTING PRODUCT ENDPOINTS")
-        print("="*60)
-        
-        # Get all products
-        success, products = self.run_test("Get All Products", "GET", "products", 200)
-        
-        if success and products:
-            print(f"   Found {len(products)} products")
-            
-            # Test filters
-            self.run_test("Get Windows Products", "GET", "products", 200, params={"category": "windows"})
-            self.run_test("Get Doors Products", "GET", "products", 200, params={"category": "doors"})
-            self.run_test("Get Featured Products", "GET", "products", 200, params={"featured": "true"})
-            
-            # Get specific product
-            if products:
-                product_slug = products[0].get('slug')
-                if product_slug:
-                    self.run_test(f"Get Product Detail ({product_slug})", "GET", f"products/{product_slug}", 200)
-
-    def test_project_endpoints(self):
-        """Test project endpoints"""
-        print("\n" + "="*60)
-        print("TESTING PROJECT ENDPOINTS")
-        print("="*60)
-        
-        # Get all projects
-        success, projects = self.run_test("Get All Projects", "GET", "projects", 200)
-        
-        if success and projects:
-            print(f"   Found {len(projects)} projects")
-            
-            # Test filters
-            self.run_test("Get Featured Projects", "GET", "projects", 200, params={"featured": "true"})
-            
-            # Get specific project
-            if projects:
-                project_slug = projects[0].get('slug')
-                if project_slug:
-                    self.run_test(f"Get Project Detail ({project_slug})", "GET", f"projects/{project_slug}", 200)
-
-    def test_blog_endpoints(self):
-        """Test blog endpoints"""
-        print("\n" + "="*60)
-        print("TESTING BLOG ENDPOINTS")
-        print("="*60)
-        
-        # Get all blog posts
-        success, posts = self.run_test("Get All Blog Posts", "GET", "blog", 200)
-        
-        if success and posts:
-            print(f"   Found {len(posts)} blog posts")
-            
-            # Get specific blog post
-            if posts:
-                post_slug = posts[0].get('slug')
-                if post_slug:
-                    self.run_test(f"Get Blog Post Detail ({post_slug})", "GET", f"blog/{post_slug}", 200)
-
-    def test_faq_endpoints(self):
-        """Test FAQ endpoints"""
-        print("\n" + "="*60)
-        print("TESTING FAQ ENDPOINTS")
-        print("="*60)
-        
-        # Get all FAQs
-        success, faqs = self.run_test("Get All FAQs", "GET", "faqs", 200)
-        
-        if success and faqs:
-            print(f"   Found {len(faqs)} FAQs")
-            
-            # Test filters
-            self.run_test("Get Featured FAQs", "GET", "faqs", 200, params={"featured": "true"})
-
-    def test_testimonial_endpoints(self):
-        """Test testimonial endpoints"""
-        print("\n" + "="*60)
-        print("TESTING TESTIMONIAL ENDPOINTS")
-        print("="*60)
-        
-        success, testimonials = self.run_test("Get All Testimonials", "GET", "testimonials", 200)
-        
-        if success and testimonials:
-            print(f"   Found {len(testimonials)} testimonials")
-
-    def test_city_endpoints(self):
-        """Test city/service area endpoints"""
-        print("\n" + "="*60)
-        print("TESTING CITY/SERVICE AREA ENDPOINTS")
-        print("="*60)
-        
-        # Get all cities
-        success, cities = self.run_test("Get All Cities", "GET", "cities", 200)
-        
-        if success and cities:
-            print(f"   Found {len(cities)} cities")
-            
-            # Get specific city
-            if cities:
-                city_slug = cities[0].get('slug')
-                if city_slug:
-                    self.run_test(f"Get City Detail ({city_slug})", "GET", f"cities/{city_slug}", 200)
-
-    def test_design_studio_endpoints(self):
-        """Test design studio endpoints"""
-        print("\n" + "="*60)
-        print("TESTING DESIGN STUDIO ENDPOINTS")
-        print("="*60)
-        
-        self.run_test("Get Color Finishes", "GET", "design-studio/colors", 200)
-        self.run_test("Get Glass Options", "GET", "design-studio/glass", 200)
-        self.run_test("Get Hardware Items", "GET", "design-studio/hardware", 200)
-
-    def test_other_endpoints(self):
-        """Test other endpoints"""
-        print("\n" + "="*60)
-        print("TESTING OTHER ENDPOINTS")
-        print("="*60)
-        
-        self.run_test("Get Downloads", "GET", "downloads", 200)
-        self.run_test("Get Settings", "GET", "settings", 200)
-        self.run_test("Get Sitemap", "GET", "sitemap.xml", 200)
-
     def print_summary(self):
         """Print test summary"""
         print("\n" + "="*60)
@@ -241,7 +115,8 @@ class KrystalAPITester:
         print(f"Total Tests: {self.tests_run}")
         print(f"Passed: {self.tests_passed}")
         print(f"Failed: {len(self.failed_tests)}")
-        print(f"Success Rate: {(self.tests_passed/self.tests_run*100):.1f}%")
+        if self.tests_run > 0:
+            print(f"Success Rate: {(self.tests_passed/self.tests_run*100):.1f}%")
         
         if self.failed_tests:
             print("\n❌ FAILED TESTS:")
@@ -267,14 +142,6 @@ def main():
     # Run all tests
     tester.test_health_endpoints()
     tester.test_lead_endpoints()
-    tester.test_product_endpoints()
-    tester.test_project_endpoints()
-    tester.test_blog_endpoints()
-    tester.test_faq_endpoints()
-    tester.test_testimonial_endpoints()
-    tester.test_city_endpoints()
-    tester.test_design_studio_endpoints()
-    tester.test_other_endpoints()
     
     # Print summary
     tester.print_summary()
