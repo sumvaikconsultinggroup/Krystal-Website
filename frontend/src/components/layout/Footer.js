@@ -173,6 +173,9 @@ export default function Footer() {
         <div className="container py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
             <p>© {currentYear} Krystal Magic World. All rights reserved.</p>
+            <p>
+                Site Made by <a href="https://sumvaik.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sumvaik Comsulting Group</a>
+            </p>
             <div className="flex items-center gap-6">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
